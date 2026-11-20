@@ -416,9 +416,11 @@ The author holds equity in Heights Labs and Convex Nexus Capital and has a manag
 The proofs of \Cref{thm:main}, \Cref{prop:lower} and \Cref{thm:sector} were developed with AI systems (OpenAI Codex
 and Anthropic Claude agents working under the author's direction), which also drafted the text and wrote the computer
 checks. The questions are those of Jerrum and Patel \cite[Section~7]{JP}. The regions $R(K)$, the notion of a
-simplicial clique and the recurrence for $W(H,K)$ in \Cref{sec:main} are taken from \cite{JP} (Theorem~6 and the proof
+simplicial clique and the recurrence for $W(H,Q)$ in \Cref{sec:main} are taken from \cite{JP} (Theorem~6 and the proof
 of Lemma~12 there), and the transfer matrices and the summation over bags in \Cref{sec:sector} follow
-\cite[Sections~5.1 and~5.2]{JP}. The author directed the work and is responsible for the content of the paper and for
+\cite[Sections~5.1 and~5.2]{JP}. The region $R(k^2/4)$ for line graphs is due to Lebowitz, Ruelle and Speer
+\cite{LRS}, the Schl\"afli graph example and same-phase stability to Leake and Ryder \cite{LR}, and the order of
+magnitude of $r(3,k)$ to Ajtai, Koml\'os and Szemer\'edi \cite{AKS} and Kim \cite{Kim}. The author directed the work and is responsible for the content of the paper and for
 decisions concerning its dissemination.
 
 \section*{Data and code availability}
@@ -430,7 +432,8 @@ The Python script at
 compares the transfer-matrix formula \eqref{eq:trace} with a direct evaluation of the independence polynomial on small
 graphs $G_{m,h}$. It checks by exhaustive search that $G_{2,2}$ has no induced $S_{1,2,2}$ and computes the zeros near
 $2^me^{i\pi/m}$ for $m=8,12,16,20,30$. It also evaluates $\Re(Z_H/Z_B)$ in \eqref{eq:root} on random claw-free graphs
-with weights in $R(2500(\Delta+1))$.
+with weights in $R(2500(\Delta+1))$, and computes the independence polynomials of the examples in the proof of
+\Cref{prop:lower} from the graphs.
 
 \begin{thebibliography}{99}
 
