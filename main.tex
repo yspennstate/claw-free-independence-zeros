@@ -1,0 +1,503 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\providecommand{\doi}[1]{\href{https://doi.org/#1}{doi:#1}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\D}{\mathcal D}
+\newcommand{\tr}{\operatorname{tr}}
+
+\title{Two questions of Jerrum and Patel on zeros of the independence polynomial}
+\author{Yitzchak Shmalo\\
+Einstein Institute of Mathematics, The Hebrew University of Jerusalem\\
+Givat Ram, Jerusalem, Israel}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Jerrum and Patel asked whether the claw-free graphs of bounded degree, or of bounded clique number, have an open
+multivariate zero-free region for the independence polynomial containing $[0,\infty)$, and whether the graphs of
+maximum degree $\Delta$ with no induced subdivided claw $S_{t,t,t}$ have a zero-free sector. We answer both. With
+$R(K)=\{z:(\Im z)^2<\Re z/K+1/(4K^2)\}$, the region $R(2500(\Delta+1))$ is multivariate zero-free for claw-free
+graphs of maximum degree $\Delta$, and $R(2500\,r(3,k))$ for claw-free graphs of clique number $k$, where $r(3,k)$ is a
+Ramsey number. Both parameters are optimal up to a constant factor. For the sector question the answer is negative
+when $t\ge2$ and $\Delta\ge6$: there are graphs of maximum degree $6$ with no induced $S_{1,2,2}$ and with zeros
+$2^m(e^{i\pi/m}+O(m^{-2}))$.
+\end{abstract}
+
+\noindent\textbf{Mathematics Subject Classification (2020):} 05C31, 05C69, 82B20.
+
+\noindent\textbf{Keywords:} independence polynomial, hard-core model, claw-free graph, zero-free region,
+subdivided claw.
+
+\section{Introduction}
+
+For a finite simple graph $G=(V,E)$ and complex weights $\boldsymbol z=(z_v)_{v\in V}$ put
+\[
+Z_G(\boldsymbol z)=\sum_{I}\prod_{v\in I}z_v ,
+\]
+the sum running over the independent sets $I$ of $G$, the empty set included. When all weights equal $z$ we write
+$Z_G(z)$. A set $F\subseteq\mathbb C$ is a multivariate zero-free region for a class of graphs if
+$Z_G(\boldsymbol z)\ne0$ for every $G$ in the class and every $\boldsymbol z\in F^{V(G)}$; the weights are chosen
+independently in $F$.
+
+By the Heilmann--Lieb theorem \cite{HL} and its extension by Chudnovsky and Seymour \cite{CS}, the univariate
+polynomial $Z_G(z)$ of a claw-free graph has only negative real zeros. Jerrum and Patel \cite{JP} study how far this
+extends to graphs with no induced copy of the subdivided claw $S_{i,j,k}$, the tree obtained from the claw by
+subdividing its three edges $i-1$, $j-1$ and $k-1$ times. They prove that for fixed $t$ and $\Delta$ the graphs of
+maximum degree $\Delta$ with no induced $S_{t,t,t}$ have an open univariate zero-free region containing
+$[0,\infty)$ \cite[Theorem~3]{JP}, and an open multivariate zero-free region containing any given interval
+$[0,\lambda_0]$ \cite[Theorem~5]{JP}. The second statement cannot be extended to all of $[0,\infty)$: the blown-up
+cycles $C_{2n}[2K_1]$ have maximum degree $4$ and no induced $S_{1,2,2}$, and have no open multivariate zero-free
+region containing $[0,\infty)$ \cite[Lemma~15]{JP}. As in \cite{JP}, for $K>0$ let
+\[
+R(K)=\Bigl\{z\in\mathbb C:\ (\Im z)^2<\frac{\Re z}{K}+\frac1{4K^2}\Bigr\}.
+\]
+By a theorem implicit in the work of Lebowitz, Ruelle and Speer \cite{LRS}, made explicit by Jerrum and Patel,
+$R(k^2/4)$ is a multivariate zero-free region for the line graphs of clique number at most $k$ \cite[Theorem~4]{JP}. They prove that $R(k)$ is
+a multivariate zero-free region for the claw-free graphs of clique number at most $k$ in which every component has a
+simplicial clique \cite[Theorem~6]{JP}. Here a clique $Q$ is simplicial if for every $u\in Q$ the neighbours of $u$
+outside $Q$ form a clique. They note that a claw-free graph becomes a member of this class after the deletion of a
+closed neighbourhood. Leake and Ryder \cite{LR} proved that the independence polynomial of every claw-free graph is
+same-phase stable, that is, for all positive reals $t_v$ the univariate polynomial $z\mapsto Z_G((t_vz)_v)$ has only
+real zeros. They also bounded the univariate zero closest to $0$, and with the Schl\"afli graph they showed that their bound for
+graphs with a simplicial clique does not extend to all claw-free graphs. Fialho and Procacci \cite{FP} improved some of
+these bounds.
+
+In \cite[Section~7]{JP} Jerrum and Patel ask two questions. The first is whether the region in their Theorem~3 can be
+taken to be a sector $\{|\arg z|<\theta\}$ with $\theta>0$ depending on $\Delta$ and $t$. The second is whether some
+form of their Theorem~6 extends to all claw-free graphs of bounded degree or bounded clique number, and, more
+basically, whether these classes have an open multivariate zero-free region containing $[0,\infty)$. For
+$S_{1,1,2}$-free graphs of maximum degree $\Delta$, Bencs \cite{Bencs} proved that $|\arg z|\le\pi/\Delta$ is
+zero-free (see \cite[Section~1]{JP}), so the first question has a positive answer for $t=1$ and for this subclass.
+
+\begin{theorem}\label{thm:main}
+Let $\Delta\ge0$ and let $G$ be a claw-free graph of maximum degree at most $\Delta$. If $z_v\in R(2500(\Delta+1))$
+for every $v\in V(G)$, then $Z_G(\boldsymbol z)\ne0$. Consequently, if $G$ is claw-free of clique number at most
+$k\ge1$ and $z_v\in R(2500\,r(3,k))$ for every $v$, then $Z_G(\boldsymbol z)\ne0$.
+\end{theorem}
+
+Here $r(3,k)$ is the least $n$ such that every graph on $n$ vertices contains a triangle or an independent set of
+size $k$. The second statement follows from the first because the neighbourhood of a vertex of a claw-free graph of
+clique number at most $k$ contains no independent set of size $3$ and no clique of size $k$, so it has at most
+$r(3,k)-1$ vertices; thus $\Delta+1\le r(3,k)$, and $R(K)\subseteq R(K')$ for $K\ge K'$.
+
+The parameters in \Cref{thm:main} cannot be improved by more than a constant factor.
+
+\begin{proposition}\label{prop:lower}
+\begin{enumerate}[label=(\alph*)]
+\item If $R(K)$ is a zero-free region for the univariate independence polynomials of the claw-free graphs of maximum
+degree at most $\Delta$, then $K\ge(\Delta+1)/4$.
+\item If $R(K)$ is a zero-free region for the univariate independence polynomials of the claw-free graphs of clique
+number at most $k$, then $K\ge(r(3,k+1)-1)/8$.
+\end{enumerate}
+\end{proposition}
+
+Adding an isolated vertex to a triangle-free graph on $r(3,k)-1$ vertices with no independent set of size $k$ shows
+that $r(3,k+1)-1\ge r(3,k)$. So the parameter in \Cref{prop:lower}(b) is at least $r(3,k)/8$, and the bounds in
+\Cref{thm:main} and \Cref{prop:lower}(b) agree up to the factor $20000$. By the theorems of Ajtai, Koml\'os and Szemer\'edi \cite{AKS} and of Kim \cite{Kim}, $r(3,k)$ lies
+between two positive constant multiples of $k^2/\log k$. So \Cref{prop:lower}(b) shows that for each fixed $C>0$ the
+region $R(Ck)$ is not zero-free for all claw-free graphs of clique number at most $k$ once $k$ is large, even for
+univariate weights. The order $k$ in \cite[Theorem~6]{JP} is a feature of the simplicial-clique class; on all
+claw-free graphs the correct order is $k^2/\log k$.
+
+The answer to the first question is negative.
+
+\begin{theorem}\label{thm:sector}
+For every $\theta>0$ there are a graph $G$ of maximum degree at most $6$ with no induced copy of $S_{1,2,2}$ and a
+complex number $z$ with $0<\arg z<\theta$ and $Z_G(z)=0$. More precisely, there are an absolute constant $m_0$ and,
+for every $m\ge m_0$, such a graph $G_m$ on $m(5m+1)$ vertices with a zero
+\[
+z_m=2^m\bigl(e^{i\pi/m}+O(m^{-2})\bigr).
+\]
+\end{theorem}
+
+Since $S_{1,2,2}$ is an induced subgraph of $S_{t,t,t}$ for every $t\ge2$, the graphs $G_m$ have no induced
+$S_{t,t,t}$, and no sector $\{|\arg z|<\theta\}$ is zero-free for the graphs of maximum degree $\Delta\ge6$ with no
+induced $S_{t,t,t}$. The zeros $z_m$ tend to infinity, so this does not contradict \cite[Theorem~3]{JP}, and adding a
+disc around $0$ to the sector does not help. All vertices of $G_m$ carry the same weight, whereas the obstruction in
+\cite[Lemma~15]{JP} uses two different weights. For $3\le\Delta\le5$ and $t\ge2$ the question remains open.
+
+\Cref{thm:main} is proved in \Cref{sec:main}, \Cref{prop:lower} in \Cref{sec:lower} and \Cref{thm:sector} in
+\Cref{sec:sector}.
+
+\section{Proof of \texorpdfstring{\Cref{thm:main}}{Theorem 1.1}}\label{sec:main}
+
+Fix $\Delta\ge0$ and put $D=\Delta+1$, $\eta=(10000D)^{-1/2}$ and $\alpha=\arctan(1/4)$. Every induced subgraph of
+$G$ is claw-free with maximum degree at most $\Delta$, so every clique of every induced subgraph has at most $D$
+vertices.
+
+\begin{lemma}\label{lem:sqrt}
+A complex number $z$ lies in $R(2500D)$ if and only if $z=(\sigma+i\tau)^2$ with $\sigma\ge0$ and $|\tau|<\eta$.
+\end{lemma}
+
+\begin{proof}
+Write $z=(\sigma+i\tau)^2$ with $\sigma\ge0$, so $\Re z=\sigma^2-\tau^2$ and $\Im z=2\sigma\tau$; the number
+$\tau^2$ does not depend on which such square root is taken. Since $1/(2500D)=4\eta^2$ and
+$1/(4(2500D)^2)=4\eta^4$, the condition $z\in R(2500D)$ reads
+$4\sigma^2\tau^2<4\eta^2(\sigma^2-\tau^2)+4\eta^4$, that is, $(\tau^2-\eta^2)(\sigma^2+\eta^2)<0$, which is
+$\tau^2<\eta^2$.
+\end{proof}
+
+Equivalently, the boundary of $R(K)$ is the image of the line $\Im\zeta=1/(2\sqrt K)$ under $\zeta\mapsto\zeta^2$;
+compare the description of the boundary of $R(k_0^2/4)$ in \cite[Section~8]{JP}. In \cite[Lemma~12]{JP} the relevant
+ratios of partition functions lie in the half-plane $\Re w\ge1/2$. We need the smaller domain $\D$
+below, which also bounds the argument.
+
+For $w\in\mathbb C$ let $\ell_\pm(w)=\Re w\pm4\Im w$, and let
+\[
+\D=\{w\in\mathbb C:\ \ell_+(w)\ge1/2,\ \ell_-(w)\ge1/2\}.
+\]
+If $w\in\D$ then $\Re w\ge1/2+4|\Im w|$, so $|w|\ge1/2$ and $|\arg w|\le\alpha$. For $w\ne0$ we have
+$\ell_\pm(1/w)=\ell_\mp(w)/|w|^2$, and $|\ell_\pm(c)|\le\sqrt{17}\,|c|$ for every $c$.
+
+\begin{lemma}\label{lem:D}
+If $0\le m\le D$, $w_1,\ldots,w_m\in\D$ and $z_1,\ldots,z_m\in R(2500D)$, then $1+\sum_{j=1}^m z_j/w_j\in\D$.
+\end{lemma}
+
+\begin{proof}
+Let $z=(\sigma+i\tau)^2$ be as in \Cref{lem:sqrt} and $w\in\D$. Then $z=\sigma^2+c$ with
+$|c|=|2i\sigma\tau-\tau^2|\le2\sigma\eta+\eta^2$, and
+\[
+\ell_\pm\Bigl(\frac zw\Bigr)=\sigma^2\,\frac{\ell_\mp(w)}{|w|^2}+\ell_\pm\Bigl(\frac cw\Bigr)
+\ge\frac{\sigma^2}{2|w|^2}-\sqrt{17}\,\frac{2\sigma\eta+\eta^2}{|w|}.
+\]
+With $x=\sigma/|w|$ the terms involving $\sigma$ give $x^2/2-2\sqrt{17}\,\eta x\ge-34\eta^2$, and the remaining term
+is at least $-2\sqrt{17}\,\eta^2$ because $|w|\ge1/2$. Hence $\ell_\pm(z/w)>-43\eta^2$, and both linear forms of
+$1+\sum_j z_j/w_j$ exceed $1-43D\eta^2=1-43/10000>1/2$.
+\end{proof}
+
+For an induced subgraph $H$ of $G$ we write $Z_H$ for $Z_H(\boldsymbol z)$ with the inherited weights. For a clique
+$Q$ of $H$ with $Z_{H-Q}\ne0$ put $W(H,Q)=Z_H/Z_{H-Q}$; thus $W(H,\varnothing)=1$. We prove by induction on $|V(H)|$
+the following two statements for every induced subgraph $H$ of $G$:
+\begin{enumerate}[label=(\roman*)]
+\item $Z_H\ne0$;
+\item $W(H,Q)\in\D$ for every simplicial clique $Q$ of $H$.
+\end{enumerate}
+Both hold when $H$ is empty. Let $H$ be nonempty and assume both statements for all smaller induced subgraphs.
+
+\medskip\noindent\emph{Statement (ii).}
+Let $Q$ be a nonempty simplicial clique of $H$ and for $u\in Q$ let $Q_u=N_H(u)\setminus Q$, a clique by the
+definition of a simplicial clique. It is a simplicial clique of $H-Q$: if $x\in Q_u$ had two nonadjacent neighbours
+$a,b$ in $H-Q$ outside $Q_u$, then $a$ and $b$ would not be adjacent to $u$, and $\{x,u,a,b\}$ would induce a claw.
+An independent set of $H$ contains at most one vertex of $Q$; if it contains $u\in Q$, its other vertices form an
+independent set of $H-Q-Q_u$. Hence
+\[
+W(H,Q)=1+\sum_{u\in Q}z_u\,\frac{Z_{H-Q-Q_u}}{Z_{H-Q}}=1+\sum_{u\in Q}\frac{z_u}{W(H-Q,Q_u)},
+\]
+where $Z_{H-Q}\ne0$ and $W(H-Q,Q_u)\in\D$ by the induction hypothesis. This is the recurrence used by Jerrum and Patel
+in the proof of \cite[Lemma~12]{JP}. Since $|Q|\le D$, \Cref{lem:D} gives $W(H,Q)\in\D$.
+
+\medskip\noindent\emph{Statement (i).}
+Fix $v\in V(H)$ and let $U=N_H(v)$, $m=|U|\le\Delta$ and $B=H-N_H[v]$. For $i\in U$ let $Q_i=N_H(i)\cap V(B)$. Each
+$Q_i$ is a simplicial clique of $B$. Indeed, two nonadjacent vertices of $Q_i$ would form, with $v$, three pairwise
+nonadjacent neighbours of $i$; and if $x\in Q_i$ had nonadjacent neighbours $a,b$ in $B-Q_i$, then $i,a,b$ would be
+three pairwise nonadjacent neighbours of $x$. For $i,j\in U$ the set $Q_j\setminus Q_i$ is a simplicial clique of
+$B-Q_i$, because the neighbours of a vertex $x\in Q_j\setminus Q_i$ in $B-Q_i-Q_j$ are among its neighbours in $B$
+outside $Q_j$. By the induction hypothesis the partition functions of $B$, $B-Q_i$ and $B-(Q_i\cup Q_j)$ are
+nonzero, and
+\begin{equation}\label{eq:A}
+\begin{gathered}
+A_i:=\frac{Z_{B-Q_i}}{Z_B}=\frac1{W(B,Q_i)},\\
+A_{ij}:=\frac{Z_{B-(Q_i\cup Q_j)}}{Z_B}=\frac{A_i}{W(B-Q_i,Q_j\setminus Q_i)}=\frac{A_j}{W(B-Q_j,Q_i\setminus Q_j)}.
+\end{gathered}
+\end{equation}
+Since every element of $\D$ has modulus at least $1/2$ and argument at most $\alpha$ in absolute value,
+\begin{equation}\label{eq:Abounds}
+|A_i|\le2,\quad|\arg A_i|\le\alpha,\qquad|A_{ij}|\le2\min(|A_i|,|A_j|),\quad|\arg A_{ij}|\le2\alpha .
+\end{equation}
+Because $H$ is claw-free, $U$ contains no three pairwise nonadjacent vertices. Classifying the independent sets of
+$H$ by their intersection with $N_H[v]$, which is empty, $\{v\}$, $\{i\}$ with $i\in U$, or $\{i,j\}$ with
+$i,j\in U$ nonadjacent, we obtain
+\begin{equation}\label{eq:root}
+\frac{Z_H}{Z_B}=1+z_v+\sum_{i\in U}z_iA_i+\sum_{\{i,j\}}z_iz_jA_{ij},
+\end{equation}
+the last sum over unordered pairs of nonadjacent vertices of $U$.
+
+Write each weight in the form $z=(\sigma+i\tau)^2$ of \Cref{lem:sqrt}. If $\sigma\ge10\eta$ put $g=z$ and $e=0$;
+otherwise put $g=0$ and $e=z$. In the first case $|\arg(\sigma+i\tau)|\le\arctan(1/10)$, so
+$|\arg g|\le2\arctan(1/10)<\alpha$; in the second, $|e|=\sigma^2+\tau^2\le101\eta^2=:E$. Do this for $z_v$ and for each $z_i$, and put $b_i=|g_iA_i|$.
+
+By \eqref{eq:Abounds}, a nonzero term $g_iA_i$ has argument at most $2\alpha$ in absolute value, so
+$\Re(g_iA_i)\ge\cos(2\alpha)\,b_i=\tfrac{15}{17}\,b_i$. A nonzero term $g_ig_jA_{ij}$ has argument at most
+$4\alpha<\pi/2$ in absolute value, so its real part is nonnegative, and so is $\Re g_v$. The remaining terms are
+bounded using \eqref{eq:A} and \eqref{eq:Abounds}: $|e_v|\le E$, $|e_iA_i|\le2E$,
+$|g_ie_jA_{ij}|\le2E\,b_i$ by the first factorization of $A_{ij}$, $|e_ig_jA_{ij}|\le2E\,b_j$ by the second, and
+$|e_ie_jA_{ij}|\le4E^2$. Each $i\in U$ lies in at most $m-1$ pairs, so taking real parts in \eqref{eq:root} gives
+\[
+\Re\frac{Z_H}{Z_B}\ \ge\ 1-(1+2m)E-4\binom m2E^2+\sum_{i\in U}\Bigl(\frac{15}{17}-2mE\Bigr)b_i .
+\]
+As $m+1\le D$ we have $(1+2m)E<2D\cdot101\eta^2=0.0202$, $4\binom m2E^2<0.0202^2/2$ and $2mE<0.0202$. Hence
+$\Re(Z_H/Z_B)>0.97$, and $Z_H\ne0$ because $Z_B\ne0$. This completes the induction, and statement (i) for $H=G$ is
+\Cref{thm:main}.
+
+\begin{remark}
+The split of the weights is needed because a small weight may multiply a large one in \eqref{eq:root}. The two
+factorizations in \eqref{eq:A} charge such a product to the single term with the large weight. On a graph containing
+an induced claw, \eqref{eq:root} acquires terms with three neighbours of $v$ and the argument fails, as it must by
+\cite[Lemma~15]{JP}.
+\end{remark}
+
+\section{Proof of \texorpdfstring{\Cref{prop:lower}}{Proposition 1.2}}\label{sec:lower}
+
+For $K>0$ we have $R(K)\cap\mathbb R=(-1/(4K),\infty)$.
+
+(a) The complete graph $K_{\Delta+1}$ is claw-free with maximum degree $\Delta$, and
+$Z_{K_{\Delta+1}}(z)=1+(\Delta+1)z$ vanishes at $z=-1/(\Delta+1)$. If $R(K)$ is zero-free then
+$-1/(\Delta+1)\le-1/(4K)$, that is, $K\ge(\Delta+1)/4$.
+
+(b) Let $N=r(3,k+1)-1$. By the definition of $r(3,k+1)$ there is a triangle-free graph $\Gamma$ on $N$ vertices with no
+independent set of size $k+1$. Its complement $\overline \Gamma$ has clique number at most $k$ and no independent set of
+size $3$, so it is claw-free. The independent sets of $\overline \Gamma$ are the cliques of $\Gamma$, namely the empty set, the
+$N$ vertices and the $a$ edges of $\Gamma$, so $Z_{\overline \Gamma}(z)=1+Nz+az^2$. For every edge $xy$ of $\Gamma$ the
+neighbourhoods of $x$ and $y$ are disjoint, so $\deg x+\deg y\le N$; summing over edges gives
+$\sum_x(\deg x)^2\le Na$, and by Cauchy--Schwarz $4a^2=(\sum_x\deg x)^2\le N\sum_x(\deg x)^2\le N^2a$, so
+$4a\le N^2$. If $a>0$ the zeros of $1+Nz+az^2$ are real and negative and the one nearer to $0$ is
+$-2/(N+\sqrt{N^2-4a})\ge-2/N$; if $a=0$ the only zero is $-1/N$. If $R(K)$ is zero-free then $-2/N\le-1/(4K)$,
+that is, $K\ge N/8$.
+
+\section{Proof of \texorpdfstring{\Cref{thm:sector}}{Theorem 1.3}}\label{sec:sector}
+
+\subsection{The graphs}
+
+Let $m\ge2$ and $h\ge1$. Take a cycle with $2mh$ sites, numbered cyclically, and replace each site by a graph, its
+bag, as follows. Odd sites receive $K_2\sqcup K_1$ (an edge and an isolated vertex). Among the even sites, every
+$m$-th one receives $3K_1$ and the others receive $2K_1$, so that each run of $2m$ consecutive sites contains $m$
+copies of $K_2\sqcup K_1$, $m-1$ copies of $2K_1$ and one copy of $3K_1$. Every vertex of a bag is joined to every
+vertex of the two neighbouring bags, and there are no other edges between bags. Let $G_{m,h}$ be the resulting graph;
+it has $h(5m+1)$ vertices.
+
+A vertex of an even bag has the $3+3$ vertices of the two neighbouring odd bags as its neighbours. An odd bag has at
+most one neighbouring bag of size $3$ because $m\ge2$, so its vertices have degree at most $1+2+3=6$. Thus $G_{m,h}$
+has maximum degree at most $6$.
+
+\begin{lemma}\label{lem:E}
+$G_{m,h}$ has no induced copy of $S_{1,2,2}$.
+\end{lemma}
+
+\begin{proof}
+Every bag $X$ is a module: each vertex outside $X$ is adjacent to all of $X$ or to none of it. Let $T$ be an induced
+subgraph of $G_{m,h}$ isomorphic to $S_{1,2,2}$. Then $V(T)\cap X$ is a module of $T$, and it is proper since $T$ has
+six vertices and $X$ at most three. We claim that a proper module $U$ of a tree $T$ with $|U|\ge2$ consists of
+leaves with a common neighbour. As $T$ is connected, some vertex $p\notin U$ has a neighbour in $U$, hence is adjacent
+to all of $U$. An edge inside $U$ would form a triangle with $p$, and a second vertex outside $U$ adjacent to $U$ would
+form a $4$-cycle with $p$ and two vertices of $U$. So $U$ is independent and $p$ is the only neighbour of each of its
+vertices. In $S_{1,2,2}$ the three leaves have three different neighbours, so each bag contains at most one vertex of
+$T$. Two vertices in different bags are adjacent exactly when their bags are neighbouring sites of the cycle, so $T$
+would be isomorphic to an induced subgraph of a cycle and have maximum degree at most $2$, while $S_{1,2,2}$ has a
+vertex of degree $3$.
+\end{proof}
+
+\subsection{Transfer matrices}
+
+An independent set of $G_{m,h}$ meets an independent set of sites of the cycle, and inside each such site it is a
+nonempty independent set of the bag. Summing over the latter, as in \cite[Section~5.2]{JP}, gives
+$Z_{G_{m,h}}(z)=Z_{C_{2mh}}(\boldsymbol x)$, where the cycle carries at each site the weight
+\[
+a=2z^2+3z,\qquad b=z^2+2z,\qquad c=z^3+3z^2+3z
+\]
+according as the bag is $K_2\sqcup K_1$, $2K_1$ or $3K_1$. For $x\in\mathbb C$ let
+$M(x)=\begin{pmatrix}1&x\\1&0\end{pmatrix}$, with rows indexed by the state of the previous site and columns by the
+state of the current one ($0$ empty, $1$ occupied). As in \cite[Section~5.1]{JP}, the independence polynomial of a
+weighted cycle is the trace of the product of these matrices taken around the cycle. We have
+$M(a)M(b)=\begin{pmatrix}1+a&b\\1&b\end{pmatrix}$ and $M(a)M(c)=\begin{pmatrix}1+a&c\\1&c\end{pmatrix}$.
+
+Let $z\notin\{0,-2\}$ and put
+\[
+\rho=\frac ab=2-\frac1{z+2},\qquad s=\frac cb=z+1+\frac1{z+2},\qquad\varepsilon=\frac1b,\qquad
+P=\begin{pmatrix}\rho+\varepsilon&1\\\varepsilon&1\end{pmatrix}.
+\]
+Then $M(a)M(b)=bP$ and $M(a)M(c)=bP\,\mathrm{diag}(1,s)$, so with
+\[
+Y=2^{-m}P^m\,\mathrm{diag}(1,s)
+\]
+we get
+\begin{equation}\label{eq:trace}
+Z_{G_{m,h}}(z)=\bigl(2^mb^m\bigr)^h\tr(Y^h),
+\end{equation}
+where $\tr$ denotes the trace.
+
+\begin{lemma}\label{lem:asym}
+Uniformly for $1/2\le|w|\le2$ and $z=2^mw$,
+\[
+\tr Y=1+w+O(m2^{-m}),\qquad\det Y=w+O(m2^{-m}).
+\]
+\end{lemma}
+
+\begin{proof}
+All constants below are absolute, and $m$ is large. We have $|z|\ge2^{m-1}$, so $1/(z+2)=O(2^{-m})$,
+$\varepsilon=O(4^{-m})$, $s=O(2^m)$, $|\rho|\ge3/2$, $|\rho-1|\ge1/2$ and $(\rho/2)^m=(1-1/(2(z+2)))^m=1+O(m2^{-m})$; in
+particular $|\rho|^m/2^m=O(1)$.
+
+Since $\det P=\rho$, we get $\det Y=2^{-2m}\rho^ms=(\rho/2)^m\,s2^{-m}$, and $s2^{-m}=w+O(2^{-m})$; this gives the second
+estimate.
+
+For the trace let $P_0=\begin{pmatrix}\rho&1\\0&1\end{pmatrix}$, so that $P-P_0$ has maximum absolute row sum
+$\|P-P_0\|_\infty=|\varepsilon|$ and
+\[
+P_0^j=\begin{pmatrix}\rho^j&(\rho^j-1)/(\rho-1)\\0&1\end{pmatrix},\qquad\|P_0^j\|_\infty\le5|\rho|^j\quad(j\ge0).
+\]
+Expanding $P^m=(P_0+(P-P_0))^m$, a product containing $n\ge1$ factors $P-P_0$ has norm at most
+$5^{n+1}|\rho|^{m-n}|\varepsilon|^n$, and there are $\binom mn$ such products, so
+\[
+\|P^m-P_0^m\|_\infty\le5|\rho|^m\Bigl[\Bigl(1+\frac{5|\varepsilon|}{|\rho|}\Bigr)^m-1\Bigr]=O(m|\varepsilon|\,|\rho|^m),
+\]
+the last step because $m|\varepsilon|=O(m4^{-m})$ is small. Multiplying by $\mathrm{diag}(1,s)$, whose norm is
+$O(2^m)$, taking the trace and dividing by $2^m$ therefore changes the result by
+$O(m|\varepsilon|\,|\rho|^m)=O(m4^{-m}2^m)=O(m2^{-m})$. Finally
+$2^{-m}\tr\bigl(P_0^m\,\mathrm{diag}(1,s)\bigr)=(\rho/2)^m+s2^{-m}=1+w+O(m2^{-m})$.
+\end{proof}
+
+\subsection{The zeros}
+
+Take $h=m$ and let $G_m=G_{m,m}$, a graph on $m(5m+1)$ vertices. On the annulus $1/2\le|w|\le2$ the entries of $Y$
+are holomorphic functions of $w$, and so is
+\[
+\Phi_m(w)=(\tr Y)^2-4\cos^2\Bigl(\frac\pi{2m}\Bigr)\det Y .
+\]
+By \Cref{lem:asym}, $\Phi_m$ differs by $O(m2^{-m})$ from
+\[
+(1+w)^2-4\cos^2\Bigl(\frac\pi{2m}\Bigr)w=(w-e^{i\pi/m})(w-e^{-i\pi/m}).
+\]
+On the circle $|w-e^{i\pi/m}|=m^{-2}$, which lies in the annulus, the right-hand side has modulus at least
+$m^{-2}(2\sin(\pi/m)-m^{-2})\ge m^{-3}$ for large $m$, while $m2^{-m}=o(m^{-3})$. By Rouch\'e's theorem $\Phi_m$ has a
+zero $w_m$ with $|w_m-e^{i\pi/m}|<m^{-2}$.
+
+At $w_m$ we have $\det Y=w_m+O(m2^{-m})\ne0$, so the eigenvalues $\lambda_1,\lambda_2$ of $Y$ are nonzero. Their ratio
+$q=\lambda_1/\lambda_2$ satisfies $(1+q)^2/q=(\tr Y)^2/\det Y=4\cos^2(\pi/(2m))$, that is,
+$q+q^{-1}=2\cos(\pi/m)$, so $q=e^{\pm i\pi/m}$. In particular $\lambda_1\ne\lambda_2$, $Y$ is diagonalizable, and
+$\lambda_1^m=-\lambda_2^m$, so $\tr(Y^m)=\lambda_1^m+\lambda_2^m=0$. The prefactor in \eqref{eq:trace} does not
+vanish at $z_m=2^mw_m$ because $b=z_m(z_m+2)\ne0$, so $Z_{G_m}(z_m)=0$. Finally
+$\arg z_m=\arg w_m=\pi/m+O(m^{-2})$ and $|z_m|2^{-m}\to1$. Together with \Cref{lem:E} and the degree bound this proves
+\Cref{thm:sector}.
+
+\begin{remark}
+The error term is small already for moderate $m$. To six decimals, the zero of $Z_{G_m}$ near $2^me^{i\pi/m}$ has
+argument $0.196525$ for $m=16$ and $0.157093$ for $m=20$, against $\pi/16\approx0.196350$ and
+$\pi/20\approx0.157080$.
+\end{remark}
+
+\section*{Acknowledgments and funding}
+
+This work was done by multiple AI agents, Claude (Anthropic) and Codex (OpenAI), connected to Math
+Brain~\cite{MathBrainRepo} and working together inside the Brain framework~\cite{BrainFramework}, a shared, persistent
+memory in which the agents record claims, proofs, failed attempts and methods, retrieve one another's results,
+coordinate who works on what, and audit each other's work. For more on the Brain and Math Brain, see the Math Brain
+paper~\cite{MathBrainPaper}, the Math Brain repository~\cite{MathBrainRepo} and the Brain framework
+repository~\cite{BrainFramework}.
+
+The research presented in this paper was supported by the European Research Council (ERC) under the European
+Union's Horizon Europe research and innovation programme (grant agreement No.\ 101041711). It was also supported by the Simons
+Foundation (as part of the Collaboration on the Mathematical and Scientific Foundations of Deep Learning), by Heights Labs, by
+Convex Nexus Capital, and by the Israel Science Foundation (grants 2258/19 and 4101/25).
+
+\section*{Declaration of competing interest}
+
+The author holds equity in Heights Labs and Convex Nexus Capital and has a management role at Convex Nexus Capital.
+
+\section*{Declaration of generative AI and AI-assisted technologies}
+
+The proofs of \Cref{thm:main}, \Cref{prop:lower} and \Cref{thm:sector} were developed with AI systems (OpenAI Codex
+and Anthropic Claude agents working under the author's direction), which also drafted the text and wrote the computer
+checks. The questions are those of Jerrum and Patel \cite[Section~7]{JP}. The regions $R(K)$, the notion of a
+simplicial clique and the recurrence for $W(H,K)$ in \Cref{sec:main} are taken from \cite{JP} (Theorem~6 and the proof
+of Lemma~12 there), and the transfer matrices and the summation over bags in \Cref{sec:sector} follow
+\cite[Sections~5.1 and~5.2]{JP}. The author directed the work and is responsible for the content of the paper and for
+decisions concerning its dissemination.
+
+\section*{Data and code availability}
+
+The Python script at
+\begin{center}
+\url{https://github.com/yspennstate/claw-free-independence-zeros/tree/v1.0}
+\end{center}
+compares the transfer-matrix formula \eqref{eq:trace} with a direct evaluation of the independence polynomial on small
+graphs $G_{m,h}$. It checks by exhaustive search that $G_{2,2}$ has no induced $S_{1,2,2}$ and computes the zeros near
+$2^me^{i\pi/m}$ for $m=8,12,16,20,30$. It also evaluates $\Re(Z_H/Z_B)$ in \eqref{eq:root} on random claw-free graphs
+with weights in $R(2500(\Delta+1))$.
+
+\begin{thebibliography}{99}
+
+\bibitem{AKS}
+M.~Ajtai, J.~Koml\'os and E.~Szemer\'edi,
+\emph{A note on Ramsey numbers},
+J.\ Combin.\ Theory Ser.\ A \textbf{29} (1980), 354--360.
+\doi{10.1016/0097-3165(80)90030-8}
+
+\bibitem{Bencs}
+F.~Bencs,
+\emph{Graphs, groups and measures},
+Ph.D.\ thesis, Central European University, 2019.
+
+\bibitem{CS}
+M.~Chudnovsky and P.~Seymour,
+\emph{The roots of the independence polynomial of a clawfree graph},
+J.\ Combin.\ Theory Ser.\ B \textbf{97} (2007), 350--357.
+\doi{10.1016/j.jctb.2006.06.001}
+
+\bibitem{FP}
+P.~M.~S.~Fialho and A.~Procacci,
+\emph{On the independent set polynomial of graphs and claw-free graphs},
+preprint, 2025, arXiv:2505.22766.
+
+\bibitem{HL}
+O.~J.~Heilmann and E.~H.~Lieb,
+\emph{Theory of monomer-dimer systems},
+Comm.\ Math.\ Phys.\ \textbf{25} (1972), 190--232.
+\doi{10.1007/BF01877590}
+
+\bibitem{JP}
+M.~Jerrum and V.~Patel,
+\emph{Zero-free regions for the independence polynomial on restricted graph classes},
+J.\ London Math.\ Soc.\ (2) \textbf{113} (2026), no.~2, e70458.
+\doi{10.1112/jlms.70458}; arXiv:2510.01466v2.
+
+\bibitem{Kim}
+J.~H.~Kim,
+\emph{The Ramsey number $R(3,t)$ has order of magnitude $t^2/\log t$},
+Random Structures Algorithms \textbf{7} (1995), 173--207.
+\doi{10.1002/rsa.3240070302}
+
+\bibitem{LR}
+J.~D.~Leake and N.~R.~Ryder,
+\emph{Generalizations of the matching polynomial to the multivariate independence polynomial},
+Algebr.\ Comb.\ \textbf{2} (2019), no.~5, 781--802.
+\url{https://www.numdam.org/item/ALCO_2019__2_5_781_0/}
+
+\bibitem{LRS}
+J.~L.~Lebowitz, D.~Ruelle and E.~R.~Speer,
+\emph{Location of the Lee--Yang zeros and absence of phase transitions in some Ising spin systems},
+J.\ Math.\ Phys.\ \textbf{53} (2012), 095211.
+\doi{10.1063/1.4738622}
+
+\bibitem{MathBrainRepo}
+Y.~Shmalo, \emph{Math Brain: public snapshot, code and tests}, 2026.
+\url{https://github.com/yspennstate/math-brain-public}
+
+\bibitem{MathBrainPaper}
+Y.~Shmalo, \emph{Math Brain: shared, auditable memory for multi-agent mathematical research}, October 2026.
+\url{https://github.com/yspennstate/math-brain-public/tree/main/papers/math-brain-2026-10-24}
+
+\bibitem{BrainFramework}
+Y.~Shmalo, \emph{Brain Framework}, public software repository, 2026.
+\url{https://github.com/yspennstate/brain-framework-public}
+
+\end{thebibliography}
+
+\end{document}
