@@ -33,11 +33,11 @@ Givat Ram, Jerusalem, Israel}
 \begin{abstract}
 Jerrum and Patel asked whether the claw-free graphs of bounded degree, or of bounded clique number, have an open
 multivariate zero-free region for the independence polynomial containing $[0,\infty)$, and whether the graphs of
-maximum degree at most $\Delta$ with no induced subdivided claw $S_{t,t,t}$ have a zero-free sector. For the claw-free
-question the answer is positive. Jerrum and Patel consider the parabolic region
+maximum degree at most $\Delta$ with no induced subdivided claw $S_{t,t,t}$ have a zero-free sector. For the first question
+the answer is positive. Jerrum and Patel consider the parabolic region
 $R(K)=\{z\in\mathbb C:(\Im z)^2<\Re z/K+1/(4K^2)\}$; we show that $R(K)$ with $K=2500(\Delta+1)$ is multivariate
 zero-free for claw-free graphs of maximum degree at most $\Delta$, and $R(K)$ with $K=2500\,r(3,k)$ for claw-free
-graphs of clique number at most $k$, where $r(3,k)$ is a Ramsey number. Both parameters are optimal up to a constant factor. For the sector question the answer is negative
+graphs of clique number at most $k$, where $r(3,k)$ is a Ramsey number. Both parameters are optimal up to a constant factor. For the second question the answer is negative
 when $t\ge2$ and $\Delta\ge6$: for every large $m$ there is a graph of maximum degree $6$ with no induced $S_{1,2,2}$
 and a zero $z_m$ with $|2^{-m}z_m-e^{\mathrm i\pi/m}|<m^{-2}$.
 \end{abstract}
@@ -56,7 +56,8 @@ Z_G(\boldsymbol z)=\sum_{I}\prod_{v\in I}z_v ,
 the sum running over the independent sets $I$ of $G$, the empty set included. When all weights equal $z$ we write
 $Z_G(z)$. A set $F\subseteq\mathbb C$ is a multivariate zero-free region for a class of graphs if
 $Z_G(\boldsymbol z)\ne0$ for every $G$ in the class and every $\boldsymbol z\in F^{V(G)}$; the weights are chosen
-independently in $F$.
+independently in $F$. It is a univariate zero-free region for the class if $Z_G(z)\ne0$ for every $G$ in the class and
+every $z\in F$.
 
 By the Heilmann--Lieb theorem \cite{HL} and its extension by Chudnovsky and Seymour \cite{CS}, the univariate
 polynomial $Z_G(z)$ of a claw-free graph has only negative real zeros. Jerrum and Patel \cite{JP} study how far this
@@ -70,6 +71,9 @@ region containing $[0,\infty)$ \cite[Lemma~15]{JP}. As in \cite{JP}, for $K>0$ l
 \[
 R(K)=\Bigl\{z\in\mathbb C:\ (\Im z)^2<\frac{\Re z}{K}+\frac1{4K^2}\Bigr\}.
 \]
+Writing $z=\zeta^2$ with $\zeta=\sigma+\mathrm i\tau$ and $\eta^2=1/(4K)$, the defining inequality becomes
+$(\tau^2-\eta^2)(\sigma^2+\eta^2)<0$, so $R(K)$ is the image of the strip $|\Im\zeta|<1/(2\sqrt K)$ under
+$\zeta\mapsto\zeta^2$. In particular $R(K)\subseteq R(K')$ for $K\ge K'$.
 By a theorem implicit in the work of Lebowitz, Ruelle and Speer \cite{LRS}, made explicit by Jerrum and Patel,
 $R(k^2/4)$ is a multivariate zero-free region for the line graphs of clique number at most $k$ \cite[Theorem~4]{JP}. They prove that $R(k)$ is
 a multivariate zero-free region for the claw-free graphs of clique number at most $k$ in which every component has a
@@ -84,8 +88,8 @@ graphs of maximum degree $\Delta$ whose radius exceeds Shearer's radius $(\Delta
 \cite{Sh85}.
 
 In \cite[Section~7]{JP} Jerrum and Patel ask whether the region in their Theorem~3 can be taken to be a sector
-$\{|\arg z|<\theta\}$ with $\theta>0$ depending on $\Delta$ and $t$, and whether some form of their Theorem~6 extends to
-all claw-free graphs of bounded degree or bounded clique number; more basically, whether these classes have an open
+$\{|\arg z|<\theta\}$ with $\theta>0$ depending on $\Delta$ and $t$. They also ask whether some form of their Theorem~6 extends to
+all claw-free graphs of bounded degree or bounded clique number, and, more basically, whether these classes have an open
 multivariate zero-free region containing $[0,\infty)$. We call these the sector question and the claw-free question. For $S_{1,1,2}$-free graphs
 of maximum degree $\Delta$, Bencs \cite{Bencs} proved that $|\arg z|\le\pi/\Delta$ is zero-free (see
 \cite[Section~1]{JP}), so the sector question has a positive answer for $S_{1,1,2}$-free graphs, in particular for
@@ -99,8 +103,8 @@ W(H,Q)=1+\sum_{u\in Q}\frac{z_u}{W(H-Q,Q_u)},\qquad W(H,Q)=\frac{Z_H}{Z_{H-Q}},
 where $Q$ is a simplicial clique of $H$ and $Q_u=N_H(u)\setminus Q$ is empty or a simplicial clique of $H-Q$; by
 \cite[Lemma~12]{JP} the ratios $W(H,Q)$ lie in the half-plane $\Re w\ge1/2$ when the clique number is at most $k$
 and all weights lie in $R(k)$. They note that deleting a vertex and its
-neighbours from a connected claw-free graph leaves a graph in the class of their Theorem~6 \cite[Section~1]{JP}, but
-this does not give the answer by itself. If $v$ is a vertex of a claw-free graph $H$ and $B=H-N_H[v]$, then for each
+neighbours from a connected claw-free graph leaves a graph in the class of their Theorem~6 \cite[Section~1]{JP}.
+The ratio $Z_H/Z_B$ for $B=H-N_H[v]$ is not of the form of the recurrence. If $v$ is a vertex of a claw-free graph $H$ and $B=H-N_H[v]$, then for each
 neighbour $i$ of $v$ the set $Q_i=N_H(i)\cap V(B)$ is empty or a simplicial clique of $B$, and
 \[
 \begin{gathered}
@@ -158,7 +162,8 @@ that $r(3,k+1)-1\ge r(3,k)$. So the parameter in \Cref{prop:lower}(b) is at leas
 between two positive constant multiples of $k^2/\log k$. So \Cref{prop:lower}(b) shows that for each fixed $C>0$ the
 region $R(Ck)$ is not zero-free for all claw-free graphs of clique number at most $k$ once $k$ is large, even for
 univariate weights. The class of \cite[Theorem~6]{JP} behaves differently. It contains the graphs $C_{2n}[K_s]$ of
-\cite[Section~5.2]{JP}, of clique number $k=2s$, and for these $R(k/2)$ is the maximal multivariate zero-free region
+\cite[Section~5.2]{JP}, obtained from $C_{2n}$ by replacing every vertex with a clique $K_s$ and joining the cliques
+at adjacent vertices completely, of clique number $k=2s$, and for these $R(k/2)$ is the maximal multivariate zero-free region
 symmetric about the real axis \cite[Lemma~14]{JP}. So the order $k$ is correct for that class, while on all claw-free
 graphs of clique number $k$ the correct order is $k^2/\log k$.
 
@@ -232,8 +237,7 @@ $1+\sum_j z_j/w_j$ exceed $1-43L\eta^2=1-43/10000>1/2$.
 \end{proof}
 
 For an induced subgraph $H$ of $G$ we write $Z_H$ for $Z_H(\boldsymbol z)$ with the inherited weights. For a clique
-$Q$ of $H$ with $Z_{H-Q}\ne0$ we use the ratio $W(H,Q)=Z_H/Z_{H-Q}$ of the introduction, which was defined there for
-simplicial cliques; thus $W(H,\varnothing)=1$. We prove by induction on $|V(H)|$
+$Q$ of $H$ (simplicial or empty) with $Z_{H-Q}\ne0$ put $W(H,Q)=Z_H/Z_{H-Q}$; thus $W(H,\varnothing)=1$. We prove by induction on $|V(H)|$
 the following two statements for every induced subgraph $H$ of $G$:
 \begin{enumerate}[label=(\roman*)]
 \item $Z_H\ne0$;
@@ -300,8 +304,10 @@ $2d\varepsilon_0<0.0202$. Hence $\Re(Z_H/Z_B)>0.97$, and $Z_H\ne0$ because $Z_B\
 and statement (i) for $H=G$ is \Cref{thm:main}.
 
 \begin{remark}
-On a graph containing an induced claw, \eqref{eq:root} acquires terms with three neighbours of $v$ and the argument
-fails, as it must by \cite[Lemma~15]{JP}.
+Without the claw-free hypothesis no region $R(K)$ is a multivariate zero-free region at bounded degree: the graphs
+$C_{2n}[2K_1]$ have maximum degree $4$ and no open multivariate zero-free region containing $[0,\infty)$
+\cite[Lemma~15]{JP}. In \eqref{eq:root} the claw-free hypothesis is used only to exclude independent sets meeting
+$N_H(v)$ in three vertices.
 \end{remark}
 
 \section{Proof of \texorpdfstring{\Cref{prop:lower}}{Proposition 1.2}}\label{sec:lower}
@@ -315,10 +321,8 @@ $-1/(\Delta+1)\le-1/(4K)$, that is, $K\ge(\Delta+1)/4$.
 (b) Let $N=r(3,k+1)-1$. By the definition of $r(3,k+1)$ there is a triangle-free graph $\Gamma$ on $N$ vertices with no
 independent set of size $k+1$. Its complement $\overline \Gamma$ has clique number at most $k$ and no independent set of
 size $3$, so it is claw-free. The independent sets of $\overline \Gamma$ are the cliques of $\Gamma$, namely the empty set, the
-$N$ vertices and the $e(\Gamma)$ edges of $\Gamma$, so $Z_{\overline \Gamma}(z)=1+Nz+e(\Gamma)z^2$. For every edge $xy$ of $\Gamma$ the
-neighbourhoods of $x$ and $y$ are disjoint, so $\deg x+\deg y\le N$; summing over edges gives
-$\sum_x(\deg x)^2\le Ne(\Gamma)$, and by Cauchy--Schwarz $4e(\Gamma)^2=(\sum_x\deg x)^2\le N\sum_x(\deg x)^2\le N^2e(\Gamma)$, so
-$4e(\Gamma)\le N^2$. If $e(\Gamma)>0$ the zeros of $1+Nz+e(\Gamma)z^2$ are real and negative and the one nearer to $0$ is
+$N$ vertices and the $e(\Gamma)$ edges of $\Gamma$, so $Z_{\overline \Gamma}(z)=1+Nz+e(\Gamma)z^2$. Since $\Gamma$ is triangle-free,
+$4e(\Gamma)\le N^2$ by Mantel's theorem \cite{Mantel}. If $e(\Gamma)>0$ the zeros of $1+Nz+e(\Gamma)z^2$ are real and negative and the one nearer to $0$ is
 $-2/(N+\sqrt{N^2-4e(\Gamma)})\ge-2/N$; if $e(\Gamma)=0$ the only zero is $-1/N$. If $R(K)$ is zero-free then $-2/N\le-1/(4K)$,
 that is, $K\ge N/8$.
 
@@ -383,7 +387,7 @@ Z_{G_{m,h}}(z)=\bigl(2^mb^m\bigr)^h\tr(Y^h).
 \end{equation}
 
 \begin{lemma}\label{lem:asym}
-There is an absolute constant $m_0$ such that for $m\ge m_0$, uniformly for $1/2\le|w|\le2$ and $z=2^mw$,
+There is an absolute constant $m_1$ such that for $m\ge m_1$, uniformly for $1/2\le|w|\le2$ and $z=2^mw$,
 \[
 \tr Y=1+w+O(m2^{-m}),\qquad\det Y=w+O(m2^{-m}).
 \]
@@ -425,7 +429,8 @@ By \Cref{lem:asym}, $\Phi_m$ differs by $O(m2^{-m})$ from
 (1+w)^2-4\cos^2\Bigl(\frac\pi{2m}\Bigr)w=(w-e^{\mathrm i\pi/m})(w-e^{-\mathrm i\pi/m}).
 \]
 On the circle $|w-e^{\mathrm i\pi/m}|=m^{-2}$, which lies in the annulus, the right-hand side has modulus at least
-$m^{-2}(2\sin(\pi/m)-m^{-2})\ge m^{-3}$ for large $m$, while $m2^{-m}=o(m^{-3})$. By Rouch\'e's theorem $\Phi_m$ has a
+$m^{-2}(2\sin(\pi/m)-m^{-2})\ge m^{-3}$ for $m\ge m_0$, where $m_0\ge m_1$ is large enough that this holds and that the
+$O(m2^{-m})$ error is less than $m^{-3}$, while $m2^{-m}=o(m^{-3})$. By Rouch\'e's theorem $\Phi_m$ has a
 zero $w_m$ with $|w_m-e^{\mathrm i\pi/m}|<m^{-2}$.
 
 At $w_m$ we have $\det Y=w_m+O(m2^{-m})\ne0$, so the eigenvalues $\lambda_1,\lambda_2$ of $Y$ are nonzero. Their ratio
@@ -469,8 +474,8 @@ and Anthropic Claude agents working under the author's direction), which also dr
 checks. The questions are those of Jerrum and Patel \cite[Section~7]{JP}. The regions $R(K)$, the notion of a
 simplicial clique and the recurrence for $W(H,Q)$ in \Cref{sec:main} are taken from \cite{JP} (Theorem~6 and the proof
 of Lemma~12 there), and the transfer matrices and the summation over bags in \Cref{sec:sector} follow
-\cite[Sections~5.1 and~5.2]{JP}. The region $R(k^2/4)$ for line graphs is due to Lebowitz, Ruelle and Speer
-\cite{LRS}, the Schl\"afli graph example and same-phase stability to Leake and Ryder \cite{LR}, and the order of
+\cite[Sections~5.1 and~5.2]{JP}. The region $R(k^2/4)$ for line graphs is implicit in the work of Lebowitz, Ruelle and
+Speer \cite{LRS} and was made explicit by Jerrum and Patel \cite[Theorem~4]{JP}. The Schl\"afli graph example and same-phase stability are due to Leake and Ryder \cite{LR}, and the order of
 magnitude of $r(3,k)$ to Ajtai, Koml\'os and Szemer\'edi \cite{AKS} and Kim \cite{Kim}. The author directed the work and is responsible for the content of the paper and for
 decisions concerning its dissemination.
 
@@ -482,8 +487,7 @@ The Python script at
 \end{center}
 compares the transfer-matrix formula \eqref{eq:trace} with a direct evaluation of the independence polynomial on small
 graphs $G_{m,h}$. It checks by exhaustive search that $G_{2,2}$ has no induced $S_{1,2,2}$ and computes the zeros near
-$2^me^{\mathrm i\pi/m}$ for $m=8,12,16,20,30$. It also evaluates $\Re(Z_H/Z_B)$ in \eqref{eq:root} on random claw-free graphs
-with weights in $R(2500(\Delta+1))$, and computes the independence polynomials of the examples in the proof of
+$2^me^{\mathrm i\pi/m}$ for $m=8,12,16,20,30$. It also computes the independence polynomials of the examples in the proof of
 \Cref{prop:lower} from the graphs.
 
 \begin{thebibliography}{99}
@@ -539,6 +543,11 @@ J.~L.~Lebowitz, D.~Ruelle and E.~R.~Speer,
 \emph{Location of the Lee--Yang zeros and absence of phase transitions in some Ising spin systems},
 J.\ Math.\ Phys.\ \textbf{53} (2012), 095211.
 \doi{10.1063/1.4738622}
+
+\bibitem{Mantel}
+W.~Mantel,
+Problem~28,
+\emph{Wiskundige Opgaven} \textbf{10} (1907), 60--61.
 
 \bibitem{Sh85}
 J.~B.~Shearer,
