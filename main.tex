@@ -71,8 +71,8 @@ region containing $[0,\infty)$ \cite[Lemma~15]{JP}. As in \cite{JP}, for $K>0$ l
 \[
 R(K)=\Bigl\{z\in\mathbb C:\ (\Im z)^2<\frac{\Re z}{K}+\frac1{4K^2}\Bigr\}.
 \]
-Writing $z=\zeta^2$ with $\zeta=\sigma+\mathrm i\tau$ and $\eta^2=1/(4K)$, the defining inequality becomes
-$(\tau^2-\eta^2)(\sigma^2+\eta^2)<0$, so $R(K)$ is the image of the strip $|\Im\zeta|<1/(2\sqrt K)$ under
+Writing $z=\zeta^2$ with $\zeta=\sigma+\mathrm i\tau$, the defining inequality becomes
+$(\tau^2-1/(4K))(\sigma^2+1/(4K))<0$, so $R(K)$ is the image of the strip $|\Im\zeta|<1/(2\sqrt K)$ under
 $\zeta\mapsto\zeta^2$. In particular $R(K)\subseteq R(K')$ for $K\ge K'$.
 By a theorem implicit in the work of Lebowitz, Ruelle and Speer \cite{LRS}, made explicit by Jerrum and Patel,
 $R(k^2/4)$ is a multivariate zero-free region for the line graphs of clique number at most $k$ \cite[Theorem~4]{JP}. They prove that $R(k)$ is
@@ -104,7 +104,8 @@ where $Q$ is a simplicial clique of $H$ and $Q_u=N_H(u)\setminus Q$ is empty or 
 \cite[Lemma~12]{JP} the ratios $W(H,Q)$ lie in the half-plane $\Re w\ge1/2$ when the clique number is at most $k$
 and all weights lie in $R(k)$. They note that deleting a vertex and its
 neighbours from a connected claw-free graph leaves a graph in the class of their Theorem~6 \cite[Section~1]{JP}.
-The ratio $Z_H/Z_B$ for $B=H-N_H[v]$ is not of the form of the recurrence. If $v$ is a vertex of a claw-free graph $H$ and $B=H-N_H[v]$, then for each
+Let $v$ be a vertex of a claw-free graph $H$ and $B=H-N_H[v]$. The ratio $Z_H/Z_B$ is not of the form of the
+recurrence: for each
 neighbour $i$ of $v$ the set $Q_i=N_H(i)\cap V(B)$ is empty or a simplicial clique of $B$, and
 \[
 \begin{gathered}
@@ -143,7 +144,7 @@ $k\ge1$ and $z_v\in R(2500\,r(3,k))$ for every $v$, then $Z_G(\boldsymbol z)\ne0
 The second statement follows from the first. In a claw-free graph of clique number at most $k$, the neighbourhood
 of a vertex induces a graph whose complement is triangle-free and has no independent set of size $k$, so the
 neighbourhood has at most $r(3,k)-1$ vertices.
-Thus $\Delta+1\le r(3,k)$, and $R(K)\subseteq R(K')$ for $K\ge K'$.
+Thus $\Delta+1\le r(3,k)$, and $R(K)\subseteq R(K')$ for $K\ge K'$ by the strip description of $R(K)$.
 
 The parameters in \Cref{thm:main} cannot be improved by more than a constant factor.
 
@@ -306,8 +307,7 @@ and statement (i) for $H=G$ is \Cref{thm:main}.
 \begin{remark}
 Without the claw-free hypothesis no region $R(K)$ is a multivariate zero-free region at bounded degree: the graphs
 $C_{2n}[2K_1]$ have maximum degree $4$ and no open multivariate zero-free region containing $[0,\infty)$
-\cite[Lemma~15]{JP}. In \eqref{eq:root} the claw-free hypothesis is used only to exclude independent sets meeting
-$N_H(v)$ in three vertices.
+\cite[Lemma~15]{JP}. In \eqref{eq:root} the claw-free hypothesis excludes independent sets meeting $N_H(v)$ in three vertices.
 \end{remark}
 
 \section{Proof of \texorpdfstring{\Cref{prop:lower}}{Proposition 1.2}}\label{sec:lower}
@@ -429,8 +429,8 @@ By \Cref{lem:asym}, $\Phi_m$ differs by $O(m2^{-m})$ from
 (1+w)^2-4\cos^2\Bigl(\frac\pi{2m}\Bigr)w=(w-e^{\mathrm i\pi/m})(w-e^{-\mathrm i\pi/m}).
 \]
 On the circle $|w-e^{\mathrm i\pi/m}|=m^{-2}$, which lies in the annulus, the right-hand side has modulus at least
-$m^{-2}(2\sin(\pi/m)-m^{-2})\ge m^{-3}$ for $m\ge m_0$, where $m_0\ge m_1$ is large enough that this holds and that the
-$O(m2^{-m})$ error is less than $m^{-3}$, while $m2^{-m}=o(m^{-3})$. By Rouch\'e's theorem $\Phi_m$ has a
+$m^{-2}(2\sin(\pi/m)-m^{-2})$. Since $m2^{-m}=o(m^{-3})$, there is $m_0\ge m_1$ such that for $m\ge m_0$ this modulus
+is at least $m^{-3}$ and the $O(m2^{-m})$ error is less than $m^{-3}$. By Rouch\'e's theorem $\Phi_m$ has a
 zero $w_m$ with $|w_m-e^{\mathrm i\pi/m}|<m^{-2}$.
 
 At $w_m$ we have $\det Y=w_m+O(m2^{-m})\ne0$, so the eigenvalues $\lambda_1,\lambda_2$ of $Y$ are nonzero. Their ratio
