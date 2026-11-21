@@ -34,9 +34,10 @@ Givat Ram, Jerusalem, Israel}
 Jerrum and Patel asked whether the claw-free graphs of bounded degree, or of bounded clique number, have an open
 multivariate zero-free region for the independence polynomial containing $[0,\infty)$, and whether the graphs of
 maximum degree $\Delta$ with no induced subdivided claw $S_{t,t,t}$ have a zero-free sector. For the first question
-the answer is positive: the region $R(2500(\Delta+1))$ of Jerrum and Patel is multivariate zero-free for claw-free
-graphs of maximum degree $\Delta$, and $R(2500\,r(3,k))$ for claw-free graphs of clique number $k$, where $r(3,k)$ is a
-Ramsey number. Both parameters are optimal up to a constant factor. For the sector question the answer is negative
+the answer is positive. Jerrum and Patel consider the parabolic region
+$R(K)=\{z\in\mathbb C:(\Im z)^2<\Re z/K+1/(4K^2)\}$; we show that $R(K)$ with $K=2500(\Delta+1)$ is multivariate
+zero-free for claw-free graphs of maximum degree $\Delta$, and $R(K)$ with $K=2500\,r(3,k)$ for claw-free graphs of
+clique number $k$, where $r(3,k)$ is a Ramsey number. Both parameters are optimal up to a constant factor. For the sector question the answer is negative
 when $t\ge2$ and $\Delta\ge6$: for every large $m$ there is a graph of maximum degree $6$ with no induced $S_{1,2,2}$
 and a zero $z_m$ with $|2^{-m}z_m-e^{\mathrm i\pi/m}|<m^{-2}$.
 \end{abstract}
@@ -183,7 +184,8 @@ $e^{\mathrm i\pi/m}$.
 
 \section{Proof of \texorpdfstring{\Cref{thm:main}}{Theorem 1.1}}\label{sec:main}
 
-Fix $\Delta\ge0$ and put $L=\Delta+1$, $\eta=(10000L)^{-1/2}$ and $\alpha=\arctan(1/4)$. Every induced subgraph of
+Fix $\Delta\ge0$ and put $L=\Delta+1$ and $\alpha=\arctan(1/4)$, so that $\eta=(10000L)^{-1/2}$ is the number of the
+introduction. Every induced subgraph of
 $G$ is claw-free with maximum degree at most $\Delta$, so every clique of every induced subgraph has at most $L$
 vertices.
 
@@ -227,7 +229,7 @@ $1+\sum_j z_j/w_j$ exceed $1-43L\eta^2=1-43/10000>1/2$.
 \end{proof}
 
 For an induced subgraph $H$ of $G$ we write $Z_H$ for $Z_H(\boldsymbol z)$ with the inherited weights. For a clique
-$Q$ of $H$ with $Z_{H-Q}\ne0$ put $W(H,Q)=Z_H/Z_{H-Q}$; thus $W(H,\varnothing)=1$. We prove by induction on $|V(H)|$
+$Q$ of $H$ with $Z_{H-Q}\ne0$, $W(H,Q)=Z_H/Z_{H-Q}$ is the ratio of the introduction; thus $W(H,\varnothing)=1$. We prove by induction on $|V(H)|$
 the following two statements for every induced subgraph $H$ of $G$:
 \begin{enumerate}[label=(\roman*)]
 \item $Z_H\ne0$;
@@ -237,7 +239,7 @@ For $Q=\varnothing$ statement (ii) holds because $\ell_\pm(1)=1$.
 Both hold when $H$ is empty. Let $H$ be nonempty and assume both statements for all smaller induced subgraphs.
 
 \medskip\noindent\emph{Statement (ii).}
-Let $Q$ be a nonempty simplicial clique of $H$ and for $u\in Q$ let $Q_u=N_H(u)\setminus Q$, a clique by the
+Let $Q$ be a nonempty simplicial clique of $H$ and for $u\in Q$ recall $Q_u=N_H(u)\setminus Q$. It is a clique by the
 definition of a simplicial clique. It is empty or a simplicial clique of $H-Q$: if $x\in Q_u$ had two nonadjacent neighbours
 $a,b$ in $H-Q$ outside $Q_u$, then $a$ and $b$ would not be adjacent to $u$, and $\{x,u,a,b\}$ would induce a claw.
 An independent set of $H$ contains at most one vertex of $Q$; if it contains $u\in Q$, its other vertices form an
@@ -249,17 +251,17 @@ where $Z_{H-Q}\ne0$ and $W(H-Q,Q_u)\in\D$ by the induction hypothesis. This is t
 with $\D$ in place of the half-plane $\Re w\ge1/2$. Since $|Q|\le L$, \Cref{lem:D} gives $W(H,Q)\in\D$.
 
 \medskip\noindent\emph{Statement (i).}
-Fix $v\in V(H)$ and let $U=N_H(v)$, $d=|U|\le\Delta$ and $B=H-N_H[v]$. For $i\in U$ let $Q_i=N_H(i)\cap V(B)$. Each
+Fix $v\in V(H)$ and let $U=N_H(v)$, $d=|U|\le\Delta$ and $B=H-N_H[v]$. For $i\in U$ recall $Q_i=N_H(i)\cap V(B)$. Each
 $Q_i$ is empty or a simplicial clique of $B$. Indeed, two nonadjacent vertices of $Q_i$ would form, with $v$, three pairwise
 nonadjacent neighbours of $i$; and if $x\in Q_i$ had nonadjacent neighbours $a,b$ in $B-Q_i$, then $i,a,b$ would be
 three pairwise nonadjacent neighbours of $x$. For $i,j\in U$ the set $Q_j\setminus Q_i$ is empty or a simplicial clique of
 $B-Q_i$, because the neighbours of a vertex $x\in Q_j\setminus Q_i$ in $B-Q_i-Q_j$ are among its neighbours in $B$
 outside $Q_j$. By the induction hypothesis the independence polynomials of $B$, $B-Q_i$ and $B-(Q_i\cup Q_j)$ are
-nonzero, and
+nonzero, and the numbers $A_i$ and $A_{ij}$ of the introduction are
 \begin{equation}\label{eq:A}
 \begin{gathered}
-A_i:=\frac{Z_{B-Q_i}}{Z_B}=\frac1{W(B,Q_i)},\\
-A_{ij}:=\frac{Z_{B-(Q_i\cup Q_j)}}{Z_B}=\frac{A_i}{W(B-Q_i,Q_j\setminus Q_i)}=\frac{A_j}{W(B-Q_j,Q_i\setminus Q_j)}.
+A_i=\frac{Z_{B-Q_i}}{Z_B}=\frac1{W(B,Q_i)},\\
+A_{ij}=\frac{Z_{B-(Q_i\cup Q_j)}}{Z_B}=\frac{A_i}{W(B-Q_i,Q_j\setminus Q_i)}=\frac{A_j}{W(B-Q_j,Q_i\setminus Q_j)}.
 \end{gathered}
 \end{equation}
 Since every element of $\D$ has modulus at least $1/2$ and argument at most $\alpha$ in absolute value,
