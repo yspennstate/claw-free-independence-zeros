@@ -33,11 +33,11 @@ Givat Ram, Jerusalem, Israel}
 \begin{abstract}
 Jerrum and Patel asked whether the claw-free graphs of bounded degree, or of bounded clique number, have an open
 multivariate zero-free region for the independence polynomial containing $[0,\infty)$, and whether the graphs of
-maximum degree $\Delta$ with no induced subdivided claw $S_{t,t,t}$ have a zero-free sector. For the first question
-the answer is positive. Jerrum and Patel consider the parabolic region
+maximum degree at most $\Delta$ with no induced subdivided claw $S_{t,t,t}$ have a zero-free sector. For the claw-free
+question the answer is positive. Jerrum and Patel consider the parabolic region
 $R(K)=\{z\in\mathbb C:(\Im z)^2<\Re z/K+1/(4K^2)\}$; we show that $R(K)$ with $K=2500(\Delta+1)$ is multivariate
-zero-free for claw-free graphs of maximum degree $\Delta$, and $R(K)$ with $K=2500\,r(3,k)$ for claw-free graphs of
-clique number $k$, where $r(3,k)$ is a Ramsey number. Both parameters are optimal up to a constant factor. For the sector question the answer is negative
+zero-free for claw-free graphs of maximum degree at most $\Delta$, and $R(K)$ with $K=2500\,r(3,k)$ for claw-free
+graphs of clique number at most $k$, where $r(3,k)$ is a Ramsey number. Both parameters are optimal up to a constant factor. For the sector question the answer is negative
 when $t\ge2$ and $\Delta\ge6$: for every large $m$ there is a graph of maximum degree $6$ with no induced $S_{1,2,2}$
 and a zero $z_m$ with $|2^{-m}z_m-e^{\mathrm i\pi/m}|<m^{-2}$.
 \end{abstract}
@@ -80,17 +80,18 @@ has only real zeros. This concerns weights of a common phase and gives no open m
 graphs with a simplicial clique and clique number $\omega$ they show that every zero is at most $-1/(4(\omega-1))$
 \cite[Corollary~4.18]{LR}, and the Schl\"afli graph, with $\omega=6$, shows that this bound fails for claw-free graphs
 in general \cite[Section~5.1]{LR}. Fialho and Procacci \cite{FP} proved a zero-free disc around $0$ for claw-free
-graphs whose radius exceeds Shearer's.
+graphs of maximum degree $\Delta$ whose radius exceeds Shearer's radius $(\Delta-1)^{\Delta-1}/\Delta^{\Delta}$
+\cite{Sh85}.
 
-In \cite[Section~7]{JP} Jerrum and Patel ask two questions. The first is whether some form of their Theorem~6 extends
-to all claw-free graphs of bounded degree or bounded clique number, and, more basically, whether these classes have an
-open multivariate zero-free region containing $[0,\infty)$. The second is whether the region in their Theorem~3 can be
-taken to be a sector $\{|\arg z|<\theta\}$ with $\theta>0$ depending on $\Delta$ and $t$. For $S_{1,1,2}$-free graphs
+In \cite[Section~7]{JP} Jerrum and Patel ask whether the region in their Theorem~3 can be taken to be a sector
+$\{|\arg z|<\theta\}$ with $\theta>0$ depending on $\Delta$ and $t$, and whether some form of their Theorem~6 extends to
+all claw-free graphs of bounded degree or bounded clique number; more basically, whether these classes have an open
+multivariate zero-free region containing $[0,\infty)$. We call these the sector question and the claw-free question. For $S_{1,1,2}$-free graphs
 of maximum degree $\Delta$, Bencs \cite{Bencs} proved that $|\arg z|\le\pi/\Delta$ is zero-free (see
-\cite[Section~1]{JP}), so the second question has a positive answer for $S_{1,1,2}$-free graphs, in particular for
+\cite[Section~1]{JP}), so the sector question has a positive answer for $S_{1,1,2}$-free graphs, in particular for
 $t=1$.
 
-The answer to the first question is positive. For claw-free graphs in which every component has a simplicial clique,
+The answer to the claw-free question is positive. For claw-free graphs in which every component has a simplicial clique,
 Jerrum and Patel prove \cite[Theorem~6]{JP} with the recurrence
 \[
 W(H,Q)=1+\sum_{u\in Q}\frac{z_u}{W(H-Q,Q_u)},\qquad W(H,Q)=\frac{Z_H}{Z_{H-Q}},
@@ -116,8 +117,8 @@ the recurrence in the smaller set
 whose points have modulus at least $1/2$ and argument at most $\arctan(1/4)$ in absolute value, and show that $\D$ is
 preserved when every weight lies in $R(2500(\Delta+1))$, that is, when every weight is $z=(\sigma+\mathrm i\tau)^2$
 with $\sigma\ge0$ and $|\tau|<\eta=(10000(\Delta+1))^{-1/2}$. Call such a weight large if $\sigma\ge10\eta$ and small
-otherwise. A product of large weights in the sum has argument less than $4\arctan(1/4)<\pi/2$, so its real part is
-nonnegative. A small weight has modulus at most $101\eta^2$. When $z_i$ is large and $z_j$ small, the first
+otherwise. A term $z_iz_jA_{ij}$ of the sum with both weights large has argument less than $4\arctan(1/4)<\pi/2$, so its real
+part is nonnegative. A small weight has modulus at most $101\eta^2$. When $z_i$ is large and $z_j$ small, the first
 factorization of $A_{ij}$ gives $|z_iz_jA_{ij}|\le202\eta^2|z_iA_i|$. This is a small multiple of the term $z_iA_i$,
 whose real part is at least $\tfrac{15}{17}|z_iA_i|$. The second factorization does the same with $i$ and $j$ exchanged.
 Summing,
@@ -161,7 +162,7 @@ univariate weights. The class of \cite[Theorem~6]{JP} behaves differently. It co
 symmetric about the real axis \cite[Lemma~14]{JP}. So the order $k$ is correct for that class, while on all claw-free
 graphs of clique number $k$ the correct order is $k^2/\log k$.
 
-The answer to the second question is negative.
+The answer to the sector question is negative.
 
 \begin{theorem}\label{thm:sector}
 For every $\theta>0$ there are a graph $G$ of maximum degree at most $6$ with no induced copy of $S_{1,2,2}$ and a
@@ -436,7 +437,7 @@ $\arg z_m=\arg w_m=\pi/m+O(m^{-2})$ and $|z_m|2^{-m}\to1$. Together with \Cref{l
 \Cref{thm:sector}.
 
 \begin{remark}
-The error term is small already for moderate $m$. To six decimals, the zero of $Z_{G_m}$ near $2^me^{\mathrm i\pi/m}$ has
+To six decimals, the zero of $Z_{G_m}$ near $2^me^{\mathrm i\pi/m}$ has
 argument $0.196525$ for $m=16$ and $0.157093$ for $m=20$, against $\pi/16\approx0.196350$ and
 $\pi/20\approx0.157080$.
 \end{remark}
@@ -538,6 +539,12 @@ J.~L.~Lebowitz, D.~Ruelle and E.~R.~Speer,
 \emph{Location of the Lee--Yang zeros and absence of phase transitions in some Ising spin systems},
 J.\ Math.\ Phys.\ \textbf{53} (2012), 095211.
 \doi{10.1063/1.4738622}
+
+\bibitem{Sh85}
+J.~B.~Shearer,
+\emph{On a problem of Spencer},
+Combinatorica \textbf{5} (1985), no.~3, 241--245.
+\doi{10.1007/BF02579368}
 
 \bibitem{MathBrainRepo}
 Y.~Shmalo, \emph{Math Brain: public snapshot, code and tests}, 2026.

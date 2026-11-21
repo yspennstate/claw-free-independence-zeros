@@ -3,7 +3,7 @@
 This repository holds the paper `main.tex` (compiled as `main.pdf`) and the script `check.py`.
 
 The paper answers two questions asked by Jerrum and Patel about the parabolic regions
-R(K) = {z : (Im z)^2 < Re z / K + 1/(4K^2)}. Every claw-free graph of maximum degree Delta has the
+R(K) = {z : (Im z)^2 < Re z / K + 1/(4K^2)}. Every claw-free graph of maximum degree at most Delta has the
 multivariate zero-free region R(2500(Delta+1)), and every claw-free graph of clique number at most k has
 R(2500 r(3,k)), where r(3,k) is the Ramsey number. Up to the constant, both are best possible. A family of
 graphs of maximum degree 6 with no induced S_{1,2,2} has zeros at arguments pi/m + O(1/m^2), so no region
