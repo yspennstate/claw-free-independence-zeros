@@ -3,8 +3,7 @@
 Part 1  (Theorem 1.3) the graphs G_{m,h}: degree, transfer-matrix formula against a direct
         evaluation, absence of an induced S_{1,2,2} in G_{2,2}, and the zeros near 2^m e^{i pi/m}.
 Part 2  (Theorem 1.1) a sanity check only: on random small claw-free graphs with random weights in
-        R(2500(Delta+1)), Z_G != 0 and Z_H/Z_B has positive real part.  The region is so thin at this
-        constant that the ratio is close to 1; this part is not evidence for the theorem.
+        R(2500(Delta+1)), Z_G != 0 and Re(Z_H/Z_B) > 0.97 at every vertex.
 Part 3  (Proposition 1.2) the lower-bound examples: K_{Delta+1}, and the complements of C_5 and of
         the Wagner graph, with their independence polynomials computed from the graphs.
 

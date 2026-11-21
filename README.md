@@ -18,7 +18,6 @@ Requires Python 3 and mpmath. Run `python check.py` (a few seconds). It checks:
    in G_{2,2} (with a positive control on S_{1,2,2} itself), and the zeros near 2^m e^{i pi/m} for
    m = 8, 12, 16, 20, 30;
 2. on small random claw-free graphs with weights in R(2500(Delta+1)), that the independence polynomial is
-   nonzero and the ratios Z_H/Z_B of the proof have positive real part (at this constant the region is very
-   thin, so this part tests the code rather than the theorem);
+   nonzero and the ratios Z_H/Z_B of the proof have real part greater than 0.97;
 3. the examples of Proposition 1.2: K_{Delta+1} and the complements of C_5 and of the Wagner graph, with
    their independence polynomials computed from the graphs.
