@@ -33,12 +33,12 @@ Givat Ram, Jerusalem, Israel}
 \begin{abstract}
 Jerrum and Patel asked whether the claw-free graphs of bounded degree, or of bounded clique number, have an open
 multivariate zero-free region for the independence polynomial containing $[0,\infty)$, and whether the graphs of
-maximum degree $\Delta$ with no induced subdivided claw $S_{t,t,t}$ have a zero-free sector. We answer both. With
-$R(K)=\{z:(\Im z)^2<\Re z/K+1/(4K^2)\}$, the region $R(2500(\Delta+1))$ is multivariate zero-free for claw-free
+maximum degree $\Delta$ with no induced subdivided claw $S_{t,t,t}$ have a zero-free sector. For the first question
+the answer is positive: the region $R(2500(\Delta+1))$ of Jerrum and Patel is multivariate zero-free for claw-free
 graphs of maximum degree $\Delta$, and $R(2500\,r(3,k))$ for claw-free graphs of clique number $k$, where $r(3,k)$ is a
 Ramsey number. Both parameters are optimal up to a constant factor. For the sector question the answer is negative
-when $t\ge2$ and $\Delta\ge6$: there are graphs of maximum degree $6$ with no induced $S_{1,2,2}$ and with zeros
-$2^m(e^{\mathrm i\pi/m}+O(m^{-2}))$.
+when $t\ge2$ and $\Delta\ge6$: for every large $m$ there is a graph of maximum degree $6$ with no induced $S_{1,2,2}$
+and a zero $z_m$ with $|2^{-m}z_m-e^{\mathrm i\pi/m}|<m^{-2}$.
 \end{abstract}
 
 \noindent\textbf{Mathematics Subject Classification (2020):} 05C31, 05C69, 82B20.
@@ -64,7 +64,7 @@ subdividing its three edges $i-1$, $j-1$ and $k-1$ times. They prove that for fi
 maximum degree $\Delta$ with no induced $S_{t,t,t}$ have an open univariate zero-free region containing
 $[0,\infty)$ \cite[Theorem~3]{JP}, and an open multivariate zero-free region containing any given interval
 $[0,\lambda_0]$ \cite[Theorem~5]{JP}. The second statement cannot be extended to all of $[0,\infty)$: the blown-up
-cycles $C_{2n}[2K_1]$ have maximum degree $4$ and no induced $S_{1,2,2}$, and have no open multivariate zero-free
+cycles $C_{2n}[2K_1]$, obtained from the cycle $C_{2n}$ by replacing every vertex with two nonadjacent twins, have maximum degree $4$ and no induced $S_{1,2,2}$, and have no open multivariate zero-free
 region containing $[0,\infty)$ \cite[Lemma~15]{JP}. As in \cite{JP}, for $K>0$ let
 \[
 R(K)=\Bigl\{z\in\mathbb C:\ (\Im z)^2<\frac{\Re z}{K}+\frac1{4K^2}\Bigr\}.
@@ -74,31 +74,58 @@ $R(k^2/4)$ is a multivariate zero-free region for the line graphs of clique numb
 a multivariate zero-free region for the claw-free graphs of clique number at most $k$ in which every component has a
 simplicial clique \cite[Theorem~6]{JP}. Here a nonempty clique $Q$ is simplicial if for every $u\in Q$ the neighbours
 of $u$ outside $Q$ form a clique. Leake and Ryder \cite{LR} proved that the independence polynomial of every claw-free graph is
-same-phase stable, that is, for all positive reals $t_v$ the univariate polynomial $z\mapsto Z_G((t_vz)_v)$ has only
-real zeros. They also bounded the univariate zero closest to $0$, and with the Schl\"afli graph they showed that their bound for
-graphs with a simplicial clique does not extend to all claw-free graphs. Fialho and Procacci \cite{FP} improved some of
-these bounds.
+same-phase stable, that is, for all positive reals $\lambda_v$ the univariate polynomial $z\mapsto Z_G((\lambda_vz)_v)$
+has only real zeros. This concerns weights of a common phase and gives no open multivariate region. For claw-free
+graphs with a simplicial clique and clique number $\omega$ they show that every zero is at most $-1/(4(\omega-1))$
+\cite[Corollary~4.18]{LR}, and the Schl\"afli graph, with $\omega=6$, shows that this bound fails for claw-free graphs
+in general \cite[Section~5.1]{LR}. Fialho and Procacci \cite{FP} proved a zero-free disc around $0$ for claw-free
+graphs whose radius exceeds Shearer's.
 
-In \cite[Section~7]{JP} Jerrum and Patel ask two questions. The first is whether the region in their Theorem~3 can be
-taken to be a sector $\{|\arg z|<\theta\}$ with $\theta>0$ depending on $\Delta$ and $t$. The second is whether some
-form of their Theorem~6 extends to all claw-free graphs of bounded degree or bounded clique number, and, more
-basically, whether these classes have an open multivariate zero-free region containing $[0,\infty)$. For
-$S_{1,1,2}$-free graphs of maximum degree $\Delta$, Bencs \cite{Bencs} proved that $|\arg z|\le\pi/\Delta$ is
-zero-free (see \cite[Section~1]{JP}), so the first question has a positive answer for $S_{1,1,2}$-free graphs, in
-particular for $t=1$.
+In \cite[Section~7]{JP} Jerrum and Patel ask two questions. The first is whether some form of their Theorem~6 extends
+to all claw-free graphs of bounded degree or bounded clique number, and, more basically, whether these classes have an
+open multivariate zero-free region containing $[0,\infty)$. The second is whether the region in their Theorem~3 can be
+taken to be a sector $\{|\arg z|<\theta\}$ with $\theta>0$ depending on $\Delta$ and $t$. For $S_{1,1,2}$-free graphs
+of maximum degree $\Delta$, Bencs \cite{Bencs} proved that $|\arg z|\le\pi/\Delta$ is zero-free (see
+\cite[Section~1]{JP}), so the second question has a positive answer for $S_{1,1,2}$-free graphs, in particular for
+$t=1$.
 
-The answer to the second question is positive. Jerrum and Patel note that deleting a vertex and its neighbours from a
-connected claw-free graph leaves a graph in the class of their Theorem~6 \cite[Section~1]{JP}, but this does not give
-the answer by itself. Let $v$ be a vertex of a claw-free graph $H$ and $B=H-N_H[v]$. Then $Z_H/Z_B$ is the sum of
-$1+z_v$, of a term $z_iA_i$ for each neighbour $i$ of $v$, and of a term $z_iz_jA_{ij}$ for each pair of nonadjacent
-neighbours. Here $A_i$ and $A_{ij}$ are ratios of independence polynomials of induced subgraphs of $B$, and $1/A_i$
-and $A_i/A_{ij}$ are ratios $Z_{H'}/Z_{H'-Q}$ with $Q$ empty or a simplicial clique of an induced subgraph $H'$. The recurrence
-in the proof of \cite[Lemma~12]{JP} keeps such ratios in the half-plane $\Re w\ge1/2$. This bounds their real parts
-but not their arguments, so it gives no lower bound on $\Re(z_iz_jA_{ij})$, and the terms of the sum may cancel. We run the same recurrence in the cone $\{w:\Re w\ge1/2+4|\Im w|\}$, whose points have argument at most
-$\arctan(1/4)$, and show that the cone is preserved when all weights lie in $R(2500(\Delta+1))$. Each weight is then
-split into a large part and a small part. The products of large parts in the sum have nonnegative real part, and a
-product of a small weight with a large one is charged, through two factorizations of $A_{ij}$, to the single term
-that carries the large weight.
+The answer to the first question is positive. For claw-free graphs in which every component has a simplicial clique,
+Jerrum and Patel prove \cite[Theorem~6]{JP} with the recurrence
+\[
+W(H,Q)=1+\sum_{u\in Q}\frac{z_u}{W(H-Q,Q_u)},\qquad W(H,Q)=\frac{Z_H}{Z_{H-Q}},
+\]
+where $Q$ is a simplicial clique of $H$ and $Q_u=N_H(u)\setminus Q$ is empty or a simplicial clique of $H-Q$; by
+\cite[Lemma~12]{JP} the ratios $W(H,Q)$ lie in the half-plane $\Re w\ge1/2$. They note that deleting a vertex and its
+neighbours from a connected claw-free graph leaves a graph in the class of their Theorem~6 \cite[Section~1]{JP}, but
+this does not give the answer by itself. If $v$ is a vertex of a claw-free graph $H$ and $B=H-N_H[v]$, then for each
+neighbour $i$ of $v$ the set $Q_i=N_H(i)\cap V(B)$ is empty or a simplicial clique of $B$, and
+\[
+\begin{gathered}
+\frac{Z_H}{Z_B}=1+z_v+\sum_{i}z_iA_i+\sum_{\{i,j\}}z_iz_jA_{ij},\\
+A_i=\frac1{W(B,Q_i)},\qquad A_{ij}=\frac{A_i}{W(B-Q_i,Q_j\setminus Q_i)}=\frac{A_j}{W(B-Q_j,Q_i\setminus Q_j)},
+\end{gathered}
+\]
+the last sum over the nonadjacent pairs of neighbours of $v$. The half-plane bounds the real parts of the $A_i$ and
+$A_{ij}$ but not their arguments, so it gives no lower bound on $\Re(z_iz_jA_{ij})$, and the terms can cancel. We run
+the recurrence in the smaller set
+\[
+\D=\{w\in\mathbb C:\ \Re w\ge1/2+4|\Im w|\},
+\]
+whose points have modulus at least $1/2$ and argument at most $\arctan(1/4)$ in absolute value, and show that $\D$ is
+preserved when every weight lies in $R(2500(\Delta+1))$, that is, when every weight is $z=(\sigma+\mathrm i\tau)^2$
+with $\sigma\ge0$ and $|\tau|<\eta=(10000(\Delta+1))^{-1/2}$. Call such a weight large if $\sigma\ge10\eta$ and small
+otherwise. A product of large weights in the sum has argument less than $4\arctan(1/4)<\pi/2$, so its real part is
+nonnegative. A small weight has modulus at most $101\eta^2$. When $z_i$ is large and $z_j$ small, the first
+factorization of $A_{ij}$ gives $|z_iz_jA_{ij}|\le202\eta^2|z_iA_i|$. This is a small multiple of the term $z_iA_i$,
+whose real part is at least $\tfrac{15}{17}|z_iA_i|$. The second factorization does the same with $i$ and $j$ exchanged.
+Summing,
+\[
+\Re\frac{Z_H}{Z_B}>0.97
+\]
+for every vertex $v$ of every induced subgraph $H$, and $Z_G\ne0$ follows by induction.
+
+Here $r(3,k)$ denotes the least $n$ such that every graph on $n$ vertices contains a triangle or an independent set of
+size $k$.
 
 \begin{theorem}\label{thm:main}
 Let $\Delta\ge0$ and let $G$ be a claw-free graph of maximum degree at most $\Delta$. If $z_v\in R(2500(\Delta+1))$
@@ -106,10 +133,9 @@ for every $v\in V(G)$, then $Z_G(\boldsymbol z)\ne0$. Consequently, if $G$ is cl
 $k\ge1$ and $z_v\in R(2500\,r(3,k))$ for every $v$, then $Z_G(\boldsymbol z)\ne0$.
 \end{theorem}
 
-Here $r(3,k)$ is the least $n$ such that every graph on $n$ vertices contains a triangle or an independent set of
-size $k$. The second statement follows from the first because the neighbourhood of a vertex of a claw-free graph of
-clique number at most $k$ contains no independent set of size $3$ and no clique of size $k$, so it has at most
-$r(3,k)-1$ vertices; thus $\Delta+1\le r(3,k)$, and $R(K)\subseteq R(K')$ for $K\ge K'$.
+The second statement follows from the first. In a claw-free graph of clique number at most $k$, the neighbourhood
+of a vertex contains no independent set of size $3$ and no clique of size $k$, so it has at most $r(3,k)-1$ vertices.
+Thus $\Delta+1\le r(3,k)$, and $R(K)\subseteq R(K')$ for $K\ge K'$.
 
 The parameters in \Cref{thm:main} cannot be improved by more than a constant factor.
 
@@ -127,17 +153,19 @@ that $r(3,k+1)-1\ge r(3,k)$. So the parameter in \Cref{prop:lower}(b) is at leas
 \Cref{thm:main} and \Cref{prop:lower}(b) agree up to the factor $20000$. By the theorems of Ajtai, Koml\'os and Szemer\'edi \cite{AKS} and of Kim \cite{Kim}, $r(3,k)$ lies
 between two positive constant multiples of $k^2/\log k$. So \Cref{prop:lower}(b) shows that for each fixed $C>0$ the
 region $R(Ck)$ is not zero-free for all claw-free graphs of clique number at most $k$ once $k$ is large, even for
-univariate weights. The order $k$ in \cite[Theorem~6]{JP} is a feature of the simplicial-clique class; on all
-claw-free graphs the correct order is $k^2/\log k$.
+univariate weights. The class of \cite[Theorem~6]{JP} behaves differently. It contains the graphs $C_{2n}[K_s]$ of
+\cite[Section~5.2]{JP}, of clique number $k=2s$, and for these $R(k/2)$ is the maximal multivariate zero-free region
+symmetric about the real axis \cite[Lemma~14]{JP}. So the order $k$ is correct for that class, while on all claw-free
+graphs of clique number $k$ the correct order is $k^2/\log k$.
 
-The answer to the first question is negative.
+The answer to the second question is negative.
 
 \begin{theorem}\label{thm:sector}
 For every $\theta>0$ there are a graph $G$ of maximum degree at most $6$ with no induced copy of $S_{1,2,2}$ and a
 complex number $z$ with $0<\arg z<\theta$ and $Z_G(z)=0$. More precisely, there are an absolute constant $m_0$ and,
-for every $m\ge m_0$, such a graph $G_m$ on $m(5m+1)$ vertices with a zero
+for every $m\ge m_0$, such a graph $G_m$ on $m(5m+1)$ vertices with a zero $z_m$ satisfying
 \[
-z_m=2^m\bigl(e^{\mathrm i\pi/m}+O(m^{-2})\bigr).
+\bigl|2^{-m}z_m-e^{\mathrm i\pi/m}\bigr|<m^{-2}.
 \]
 \end{theorem}
 
@@ -153,54 +181,49 @@ $\tr Y=1+w+O(m2^{-m})$ and $\det Y=w+O(m2^{-m})$. Where $(\tr Y)^2=4\cos^2(\pi/(
 have ratio $e^{\pm\mathrm i\pi/m}$, so $\tr(Y^m)=0$, and this happens at a point $w_m$ within $m^{-2}$ of
 $e^{\mathrm i\pi/m}$.
 
-\Cref{thm:main} is proved in \Cref{sec:main}, \Cref{prop:lower} in \Cref{sec:lower} and \Cref{thm:sector} in
-\Cref{sec:sector}.
-
 \section{Proof of \texorpdfstring{\Cref{thm:main}}{Theorem 1.1}}\label{sec:main}
 
-Fix $\Delta\ge0$ and put $D=\Delta+1$, $\eta=(10000D)^{-1/2}$ and $\alpha=\arctan(1/4)$. Every induced subgraph of
-$G$ is claw-free with maximum degree at most $\Delta$, so every clique of every induced subgraph has at most $D$
+Fix $\Delta\ge0$ and put $L=\Delta+1$, $\eta=(10000L)^{-1/2}$ and $\alpha=\arctan(1/4)$. Every induced subgraph of
+$G$ is claw-free with maximum degree at most $\Delta$, so every clique of every induced subgraph has at most $L$
 vertices.
 
 \begin{lemma}\label{lem:sqrt}
-A complex number $z$ lies in $R(2500D)$ if and only if $z=(\sigma+\mathrm i\tau)^2$ with $\sigma\ge0$ and $|\tau|<\eta$.
+A complex number $z$ lies in $R(2500L)$ if and only if
+\begin{equation}\label{eq:sqrt}
+z=(\sigma+\mathrm i\tau)^2\qquad\text{with }\sigma\ge0\text{ and }|\tau|<\eta .
+\end{equation}
 \end{lemma}
 
 \begin{proof}
-Write $z=(\sigma+\mathrm i\tau)^2$ with $\sigma\ge0$, so $\Re z=\sigma^2-\tau^2$ and $\Im z=2\sigma\tau$; the number
-$\tau^2$ does not depend on which such square root is taken. Since $1/(2500D)=4\eta^2$ and
-$1/(4(2500D)^2)=4\eta^4$, the condition $z\in R(2500D)$ reads
+Write $z$ as in \eqref{eq:sqrt} with $\sigma\ge0$, so $\Re z=\sigma^2-\tau^2$ and $\Im z=2\sigma\tau$; the number
+$\tau^2$ does not depend on which such square root is taken. Since $1/(2500L)=4\eta^2$ and
+$1/(4(2500L)^2)=4\eta^4$, the condition $z\in R(2500L)$ reads
 $4\sigma^2\tau^2<4\eta^2(\sigma^2-\tau^2)+4\eta^4$, that is, $(\tau^2-\eta^2)(\sigma^2+\eta^2)<0$, which is
 $\tau^2<\eta^2$.
 \end{proof}
 
-Equivalently, the boundary of $R(K)$ is the image of the line $\Im\zeta=1/(2\sqrt K)$ under $\zeta\mapsto\zeta^2$;
-compare the description of the boundary of $R(k_0^2/4)$ in \cite[Section~8]{JP}, where $k_0$ is the size of the
-largest clique in the decomposition of a line graph used there. In \cite[Lemma~12]{JP} the relevant
-ratios of partition functions lie in the half-plane $\Re w\ge1/2$. We need the smaller domain $\D$
-below, which also bounds the argument.
+Equivalently, the boundary of $R(K)$ is the image of the line $\Im\zeta=1/(2\sqrt K)$ under $\zeta\mapsto\zeta^2$.
 
-For $w\in\mathbb C$ let $\ell_\pm(w)=\Re w\pm4\Im w$, and let
-\[
-\D=\{w\in\mathbb C:\ \ell_+(w)\ge1/2,\ \ell_-(w)\ge1/2\}.
-\]
-If $w\in\D$ then $\Re w\ge1/2+4|\Im w|$, so $|w|\ge1/2$ and $|\arg w|\le\alpha$. For $w\ne0$ we have
-$\ell_\pm(1/w)=\ell_\mp(w)/|w|^2$, and $|\ell_\pm(c)|\le\sqrt{17}\,|c|$ for every $c$.
+Recall from the introduction the set $\D=\{w\in\mathbb C:\ \Re w\ge1/2+4|\Im w|\}$. Its points satisfy $|w|\ge1/2$ and
+$|\arg w|\le\alpha$. For $w\in\mathbb C$ let $\ell_\pm(w)=\Re w\pm4\Im w$; then $w\in\D$ if and only if
+$\ell_+(w)\ge1/2$ and $\ell_-(w)\ge1/2$. For $w\ne0$ we have $\ell_\pm(1/w)=\ell_\mp(w)/|w|^2$, and
+$|\ell_\pm(c)|\le\sqrt{17}\,|c|$ for every $c$.
 
 \begin{lemma}\label{lem:D}
-If $0\le m\le D$, $w_1,\ldots,w_m\in\D$ and $z_1,\ldots,z_m\in R(2500D)$, then $1+\sum_{j=1}^m z_j/w_j\in\D$.
+Let $I$ be a finite set with $|I|\le L$. If $w_j\in\D$ and $z_j\in R(2500L)$ for every $j\in I$, then
+$1+\sum_{j\in I}z_j/w_j\in\D$.
 \end{lemma}
 
 \begin{proof}
-Let $z=(\sigma+\mathrm i\tau)^2$ be as in \Cref{lem:sqrt} and $w\in\D$. Then $z=\sigma^2+c$ with
+Let $z$ be as in \eqref{eq:sqrt} and $w\in\D$. Then $z=\sigma^2+c$ with
 $|c|=|2\mathrm i\sigma\tau-\tau^2|\le2\sigma\eta+\eta^2$, and
 \[
 \ell_\pm\Bigl(\frac zw\Bigr)=\sigma^2\,\frac{\ell_\mp(w)}{|w|^2}+\ell_\pm\Bigl(\frac cw\Bigr)
 \ge\frac{\sigma^2}{2|w|^2}-\sqrt{17}\,\frac{2\sigma\eta+\eta^2}{|w|}.
 \]
-With $x=\sigma/|w|$ the terms involving $\sigma$ give $x^2/2-2\sqrt{17}\,\eta x\ge-34\eta^2$, and the remaining term
+With $y=\sigma/|w|$ the terms involving $\sigma$ give $y^2/2-2\sqrt{17}\,\eta y\ge-34\eta^2$, and the remaining term
 is at least $-2\sqrt{17}\,\eta^2$ because $|w|\ge1/2$. Hence $\ell_\pm(z/w)>-43\eta^2$, and both linear forms of
-$1+\sum_j z_j/w_j$ exceed $1-43D\eta^2=1-43/10000>1/2$.
+$1+\sum_j z_j/w_j$ exceed $1-43L\eta^2=1-43/10000>1/2$.
 \end{proof}
 
 For an induced subgraph $H$ of $G$ we write $Z_H$ for $Z_H(\boldsymbol z)$ with the inherited weights. For a clique
@@ -222,16 +245,16 @@ independent set of $H-Q-Q_u$. Hence
 \[
 W(H,Q)=1+\sum_{u\in Q}z_u\,\frac{Z_{H-Q-Q_u}}{Z_{H-Q}}=1+\sum_{u\in Q}\frac{z_u}{W(H-Q,Q_u)},
 \]
-where $Z_{H-Q}\ne0$ and $W(H-Q,Q_u)\in\D$ by the induction hypothesis. This is the recurrence used by Jerrum and Patel
-in the proof of \cite[Lemma~12]{JP}. Since $|Q|\le D$, \Cref{lem:D} gives $W(H,Q)\in\D$.
+where $Z_{H-Q}\ne0$ and $W(H-Q,Q_u)\in\D$ by the induction hypothesis. This is the recurrence of \cite[Lemma~12]{JP},
+with $\D$ in place of the half-plane $\Re w\ge1/2$. Since $|Q|\le L$, \Cref{lem:D} gives $W(H,Q)\in\D$.
 
 \medskip\noindent\emph{Statement (i).}
-Fix $v\in V(H)$ and let $U=N_H(v)$, $m=|U|\le\Delta$ and $B=H-N_H[v]$. For $i\in U$ let $Q_i=N_H(i)\cap V(B)$. Each
+Fix $v\in V(H)$ and let $U=N_H(v)$, $d=|U|\le\Delta$ and $B=H-N_H[v]$. For $i\in U$ let $Q_i=N_H(i)\cap V(B)$. Each
 $Q_i$ is empty or a simplicial clique of $B$. Indeed, two nonadjacent vertices of $Q_i$ would form, with $v$, three pairwise
 nonadjacent neighbours of $i$; and if $x\in Q_i$ had nonadjacent neighbours $a,b$ in $B-Q_i$, then $i,a,b$ would be
 three pairwise nonadjacent neighbours of $x$. For $i,j\in U$ the set $Q_j\setminus Q_i$ is empty or a simplicial clique of
 $B-Q_i$, because the neighbours of a vertex $x\in Q_j\setminus Q_i$ in $B-Q_i-Q_j$ are among its neighbours in $B$
-outside $Q_j$. By the induction hypothesis the partition functions of $B$, $B-Q_i$ and $B-(Q_i\cup Q_j)$ are
+outside $Q_j$. By the induction hypothesis the independence polynomials of $B$, $B-Q_i$ and $B-(Q_i\cup Q_j)$ are
 nonzero, and
 \begin{equation}\label{eq:A}
 \begin{gathered}
@@ -251,28 +274,28 @@ $i,j\in U$ nonadjacent, we obtain
 \end{equation}
 the last sum over unordered pairs of nonadjacent vertices of $U$.
 
-Write each weight in the form $z=(\sigma+\mathrm i\tau)^2$ of \Cref{lem:sqrt}. If $\sigma\ge10\eta$ put $g=z$ and $e=0$;
-otherwise put $g=0$ and $e=z$. In the first case $|\arg(\sigma+\mathrm i\tau)|\le\arctan(1/10)$, so
-$|\arg g|\le2\arctan(1/10)<\alpha$; in the second, $|e|=\sigma^2+\tau^2\le101\eta^2=:E$. Do this for $z_v$ and for each $z_i$, and put $b_i=|g_iA_i|$.
+Write each weight $z$ as in \eqref{eq:sqrt}. As in the introduction, $z$ is large if $\sigma\ge10\eta$ and small
+otherwise. For a large weight put $z^+=z$ and $z^-=0$; for a small one put $z^+=0$ and $z^-=z$. If $z$ is large then
+$|\arg(\sigma+\mathrm i\tau)|\le\arctan(1/10)$, so $|\arg z^+|\le2\arctan(1/10)<\alpha$; if $z$ is small then
+$|z^-|=\sigma^2+\tau^2\le101\eta^2=:\varepsilon_0$. Do this for $z_v$ and for each $z_i$, and put $b_i=|z_i^+A_i|$.
 
-By \eqref{eq:Abounds}, a nonzero term $g_iA_i$ has argument at most $2\alpha$ in absolute value, so
-$\Re(g_iA_i)\ge\cos(2\alpha)\,b_i=\tfrac{15}{17}\,b_i$. A nonzero term $g_ig_jA_{ij}$ has argument at most
-$4\alpha<\pi/2$ in absolute value, so its real part is nonnegative, and so is $\Re g_v$. The remaining terms are
-bounded using \eqref{eq:A} and \eqref{eq:Abounds}: $|e_v|\le E$, $|e_iA_i|\le2E$,
-$|g_ie_jA_{ij}|\le2E\,b_i$ by the first factorization of $A_{ij}$, $|e_ig_jA_{ij}|\le2E\,b_j$ by the second, and
-$|e_ie_jA_{ij}|\le4E^2$. Each $i\in U$ lies in at most $m-1$ pairs, so taking real parts in \eqref{eq:root} gives
+By \eqref{eq:Abounds}, a nonzero term $z_i^+A_i$ has argument at most $2\alpha$ in absolute value, so
+$\Re(z_i^+A_i)\ge\cos(2\alpha)\,b_i=\tfrac{15}{17}\,b_i$. A nonzero term $z_i^+z_j^+A_{ij}$ has argument at most
+$4\alpha<\pi/2$ in absolute value, so its real part is nonnegative, and so is $\Re z_v^+$. The remaining terms are
+bounded using \eqref{eq:A} and \eqref{eq:Abounds}: $|z_v^-|\le\varepsilon_0$, $|z_i^-A_i|\le2\varepsilon_0$,
+$|z_i^+z_j^-A_{ij}|\le2\varepsilon_0\,b_i$ by the first factorization of $A_{ij}$, $|z_i^-z_j^+A_{ij}|\le2\varepsilon_0\,b_j$
+by the second, and $|z_i^-z_j^-A_{ij}|\le4\varepsilon_0^2$. Each $i\in U$ lies in at most $d-1$ pairs, so taking real
+parts in \eqref{eq:root} gives
 \[
-\Re\frac{Z_H}{Z_B}\ \ge\ 1-(1+2m)E-4\binom m2E^2+\sum_{i\in U}\Bigl(\frac{15}{17}-2mE\Bigr)b_i .
+\Re\frac{Z_H}{Z_B}\ \ge\ 1-(1+2d)\varepsilon_0-4\binom d2\varepsilon_0^2+\sum_{i\in U}\Bigl(\frac{15}{17}-2d\varepsilon_0\Bigr)b_i .
 \]
-As $m+1\le D$ we have $(1+2m)E<2D\cdot101\eta^2=0.0202$, $4\binom m2E^2<0.0202^2/2$ and $2mE<0.0202$. Hence
-$\Re(Z_H/Z_B)>0.97$, and $Z_H\ne0$ because $Z_B\ne0$. This completes the induction, and statement (i) for $H=G$ is
-\Cref{thm:main}.
+As $d+1\le L$ we have $(1+2d)\varepsilon_0<2L\cdot101\eta^2=0.0202$, $4\binom d2\varepsilon_0^2<0.0202^2/2$ and
+$2d\varepsilon_0<0.0202$. Hence $\Re(Z_H/Z_B)>0.97$, and $Z_H\ne0$ because $Z_B\ne0$. This completes the induction,
+and statement (i) for $H=G$ is \Cref{thm:main}.
 
 \begin{remark}
-The split of the weights is needed because a small weight may multiply a large one in \eqref{eq:root}. The two
-factorizations in \eqref{eq:A} charge such a product to the single term with the large weight. On a graph containing
-an induced claw, \eqref{eq:root} acquires terms with three neighbours of $v$ and the argument fails, as it must by
-\cite[Lemma~15]{JP}.
+On a graph containing an induced claw, \eqref{eq:root} acquires terms with three neighbours of $v$ and the argument
+fails, as it must by \cite[Lemma~15]{JP}.
 \end{remark}
 
 \section{Proof of \texorpdfstring{\Cref{prop:lower}}{Proposition 1.2}}\label{sec:lower}
@@ -286,11 +309,11 @@ $-1/(\Delta+1)\le-1/(4K)$, that is, $K\ge(\Delta+1)/4$.
 (b) Let $N=r(3,k+1)-1$. By the definition of $r(3,k+1)$ there is a triangle-free graph $\Gamma$ on $N$ vertices with no
 independent set of size $k+1$. Its complement $\overline \Gamma$ has clique number at most $k$ and no independent set of
 size $3$, so it is claw-free. The independent sets of $\overline \Gamma$ are the cliques of $\Gamma$, namely the empty set, the
-$N$ vertices and the $a$ edges of $\Gamma$, so $Z_{\overline \Gamma}(z)=1+Nz+az^2$. For every edge $xy$ of $\Gamma$ the
+$N$ vertices and the $e(\Gamma)$ edges of $\Gamma$, so $Z_{\overline \Gamma}(z)=1+Nz+e(\Gamma)z^2$. For every edge $xy$ of $\Gamma$ the
 neighbourhoods of $x$ and $y$ are disjoint, so $\deg x+\deg y\le N$; summing over edges gives
-$\sum_x(\deg x)^2\le Na$, and by Cauchy--Schwarz $4a^2=(\sum_x\deg x)^2\le N\sum_x(\deg x)^2\le N^2a$, so
-$4a\le N^2$. If $a>0$ the zeros of $1+Nz+az^2$ are real and negative and the one nearer to $0$ is
-$-2/(N+\sqrt{N^2-4a})\ge-2/N$; if $a=0$ the only zero is $-1/N$. If $R(K)$ is zero-free then $-2/N\le-1/(4K)$,
+$\sum_x(\deg x)^2\le Ne(\Gamma)$, and by Cauchy--Schwarz $4e(\Gamma)^2=(\sum_x\deg x)^2\le N\sum_x(\deg x)^2\le N^2e(\Gamma)$, so
+$4e(\Gamma)\le N^2$. If $e(\Gamma)>0$ the zeros of $1+Nz+e(\Gamma)z^2$ are real and negative and the one nearer to $0$ is
+$-2/(N+\sqrt{N^2-4e(\Gamma)})\ge-2/N$; if $e(\Gamma)=0$ the only zero is $-1/N$. If $R(K)$ is zero-free then $-2/N\le-1/(4K)$,
 that is, $K\ge N/8$.
 
 \section{Proof of \texorpdfstring{\Cref{thm:sector}}{Theorem 1.3}}\label{sec:sector}
@@ -315,10 +338,10 @@ $G_{m,h}$ has no induced copy of $S_{1,2,2}$.
 \begin{proof}
 Every bag $X$ is a module: each vertex outside $X$ is adjacent to all of $X$ or to none of it. Let $T$ be an induced
 subgraph of $G_{m,h}$ isomorphic to $S_{1,2,2}$. Then $V(T)\cap X$ is a module of $T$, and it is proper since $T$ has
-six vertices and $X$ at most three. We claim that a proper module $U$ of a tree $T$ with $|U|\ge2$ consists of
-leaves with a common neighbour. As $T$ is connected, some vertex $p\notin U$ has a neighbour in $U$, hence is adjacent
-to all of $U$. An edge inside $U$ would form a triangle with $p$, and a second vertex outside $U$ adjacent to $U$ would
-form a $4$-cycle with $p$ and two vertices of $U$. So $U$ is independent and $p$ is the only neighbour of each of its
+six vertices and $X$ at most three. We claim that a proper module $J$ of a tree $T$ with $|J|\ge2$ consists of
+leaves with a common neighbour. As $T$ is connected, some vertex $p\notin J$ has a neighbour in $J$, hence is adjacent
+to all of $J$. An edge inside $J$ would form a triangle with $p$, and a second vertex outside $J$ adjacent to $J$ would
+form a $4$-cycle with $p$ and two vertices of $J$. So $J$ is independent and $p$ is the only neighbour of each of its
 vertices. In $S_{1,2,2}$ the three leaves have three different neighbours, so each bag contains at most one vertex of
 $T$. Two vertices in different bags are adjacent exactly when their bags are neighbouring sites of the cycle, so $T$
 would be isomorphic to an induced subgraph of a cycle and have maximum degree at most $2$, while $S_{1,2,2}$ has a
@@ -350,9 +373,8 @@ Y=2^{-m}P^m\,\mathrm{diag}(1,s)
 \]
 we get
 \begin{equation}\label{eq:trace}
-Z_{G_{m,h}}(z)=\bigl(2^mb^m\bigr)^h\tr(Y^h),
+Z_{G_{m,h}}(z)=\bigl(2^mb^m\bigr)^h\tr(Y^h).
 \end{equation}
-where $\tr$ denotes the trace.
 
 \begin{lemma}\label{lem:asym}
 There is an absolute constant $m_0$ such that for $m\ge m_0$, uniformly for $1/2\le|w|\le2$ and $z=2^mw$,
@@ -414,7 +436,7 @@ argument $0.196525$ for $m=16$ and $0.157093$ for $m=20$, against $\pi/16\approx
 $\pi/20\approx0.157080$.
 \end{remark}
 
-\section*{Acknowledgments and funding}
+\section*{Acknowledgments}
 
 This work was done by multiple AI agents, Claude (Anthropic) and Codex (OpenAI), connected to Math
 Brain~\cite{MathBrainRepo} and working together inside the Brain framework~\cite{BrainFramework}, a shared, persistent
@@ -422,6 +444,8 @@ memory in which the agents record claims, proofs, failed attempts and methods, r
 coordinate who works on what, and audit each other's work. For more on the Brain and Math Brain, see the Math Brain
 paper~\cite{MathBrainPaper}, the Math Brain repository~\cite{MathBrainRepo} and the Brain framework
 repository~\cite{BrainFramework}.
+
+\section*{Funding}
 
 The research presented in this paper was supported by the European Research Council (ERC) under the European
 Union's Horizon Europe research and innovation programme (grant agreement No.\ 101041711). It was also supported by the Simons
