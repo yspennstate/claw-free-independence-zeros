@@ -96,7 +96,8 @@ Jerrum and Patel prove \cite[Theorem~6]{JP} with the recurrence
 W(H,Q)=1+\sum_{u\in Q}\frac{z_u}{W(H-Q,Q_u)},\qquad W(H,Q)=\frac{Z_H}{Z_{H-Q}},
 \]
 where $Q$ is a simplicial clique of $H$ and $Q_u=N_H(u)\setminus Q$ is empty or a simplicial clique of $H-Q$; by
-\cite[Lemma~12]{JP} the ratios $W(H,Q)$ lie in the half-plane $\Re w\ge1/2$. They note that deleting a vertex and its
+\cite[Lemma~12]{JP} the ratios $W(H,Q)$ lie in the half-plane $\Re w\ge1/2$ when the clique number is at most $k$
+and all weights lie in $R(k)$. They note that deleting a vertex and its
 neighbours from a connected claw-free graph leaves a graph in the class of their Theorem~6 \cite[Section~1]{JP}, but
 this does not give the answer by itself. If $v$ is a vertex of a claw-free graph $H$ and $B=H-N_H[v]$, then for each
 neighbour $i$ of $v$ the set $Q_i=N_H(i)\cap V(B)$ is empty or a simplicial clique of $B$, and
@@ -135,7 +136,8 @@ $k\ge1$ and $z_v\in R(2500\,r(3,k))$ for every $v$, then $Z_G(\boldsymbol z)\ne0
 \end{theorem}
 
 The second statement follows from the first. In a claw-free graph of clique number at most $k$, the neighbourhood
-of a vertex contains no independent set of size $3$ and no clique of size $k$, so it has at most $r(3,k)-1$ vertices.
+of a vertex induces a graph whose complement is triangle-free and has no independent set of size $k$, so the
+neighbourhood has at most $r(3,k)-1$ vertices.
 Thus $\Delta+1\le r(3,k)$, and $R(K)\subseteq R(K')$ for $K\ge K'$.
 
 The parameters in \Cref{thm:main} cannot be improved by more than a constant factor.
@@ -172,8 +174,8 @@ for every $m\ge m_0$, such a graph $G_m$ on $m(5m+1)$ vertices with a zero $z_m$
 
 Since $S_{1,2,2}$ is an induced subgraph of $S_{t,t,t}$ for every $t\ge2$, the graphs $G_m$ have no induced
 $S_{t,t,t}$, and no sector $\{|\arg z|<\theta\}$ is zero-free for the graphs of maximum degree $\Delta\ge6$ with no
-induced $S_{t,t,t}$. The zeros $z_m$ tend to infinity, so this does not contradict \cite[Theorem~3]{JP}, and adding a
-disc around $0$ to the sector does not help. All vertices of $G_m$ carry the same weight, whereas the obstruction in
+induced $S_{t,t,t}$. The zeros $z_m$ tend to infinity, so this does not contradict \cite[Theorem~3]{JP}, and no set
+$\{|\arg z|<\theta\}\cup\{|z|<r\}$ with $\theta,r>0$ is zero-free for this class. All vertices of $G_m$ carry the same weight, whereas the obstruction in
 \cite[Lemma~15]{JP} uses several different weights. For $3\le\Delta\le5$ and $t\ge2$ the question remains open.
 
 The graph $G_m$ is a blow-up of a cycle of length $2m^2$ whose bags are $K_2\sqcup K_1$, $2K_1$ and $3K_1$. By a
@@ -229,7 +231,8 @@ $1+\sum_j z_j/w_j$ exceed $1-43L\eta^2=1-43/10000>1/2$.
 \end{proof}
 
 For an induced subgraph $H$ of $G$ we write $Z_H$ for $Z_H(\boldsymbol z)$ with the inherited weights. For a clique
-$Q$ of $H$ with $Z_{H-Q}\ne0$, $W(H,Q)=Z_H/Z_{H-Q}$ is the ratio of the introduction; thus $W(H,\varnothing)=1$. We prove by induction on $|V(H)|$
+$Q$ of $H$ with $Z_{H-Q}\ne0$ we use the ratio $W(H,Q)=Z_H/Z_{H-Q}$ of the introduction, which was defined there for
+simplicial cliques; thus $W(H,\varnothing)=1$. We prove by induction on $|V(H)|$
 the following two statements for every induced subgraph $H$ of $G$:
 \begin{enumerate}[label=(\roman*)]
 \item $Z_H\ne0$;
@@ -276,7 +279,7 @@ $i,j\in U$ nonadjacent, we obtain
 \end{equation}
 the last sum over unordered pairs of nonadjacent vertices of $U$.
 
-Write each weight $z$ as in \eqref{eq:sqrt}. As in the introduction, $z$ is large if $\sigma\ge10\eta$ and small
+Write each weight $z$ as in \eqref{eq:sqrt}. Recall that $z$ is large if $\sigma\ge10\eta$ and small
 otherwise. For a large weight put $z^+=z$ and $z^-=0$; for a small one put $z^+=0$ and $z^-=z$. If $z$ is large then
 $|\arg(\sigma+\mathrm i\tau)|\le\arctan(1/10)$, so $|\arg z^+|\le2\arctan(1/10)<\alpha$; if $z$ is small then
 $|z^-|=\sigma^2+\tau^2\le101\eta^2=:\varepsilon_0$. Do this for $z_v$ and for each $z_i$, and put $b_i=|z_i^+A_i|$.
