@@ -94,7 +94,7 @@ In \cite[Section~7]{JP} Jerrum and Patel ask whether the region in their Theorem
 $\{|\arg z|<\theta\}$ with $\theta>0$ depending on $\Delta$ and $t$. They also ask whether some form of their Theorem~6 extends to
 all claw-free graphs of bounded degree or bounded clique number, and, more basically, whether these classes have an open
 multivariate zero-free region containing $[0,\infty)$. We call these the sector question and the claw-free question. For $S_{1,1,2}$-free graphs
-of maximum degree $\Delta$, Bencs \cite{Bencs} proved that $|\arg z|\le\pi/\Delta$ is zero-free (see
+of maximum degree $\Delta\ge2$, Bencs \cite{Bencs} proved that $|\arg z|\le\pi/\Delta$ is zero-free (see
 \cite[Section~1]{JP}), so the sector question has a positive answer for $S_{1,1,2}$-free graphs, in particular for
 $t=1$.
 
@@ -360,7 +360,7 @@ vertex of degree $3$.
 \subsection{Transfer matrices}
 
 The sites met by an independent set of $G_{m,h}$ form an independent set of the cycle, and inside each such site
-the set is a nonempty independent set of the bag. Summing over the latter, as in \cite[Section~5.2]{JP}, gives
+the set is a nonempty independent set of the bag. Summing over the latter, as in \cite[Section~5.4]{JP}, gives
 $Z_{G_{m,h}}(z)=Z_{C_{2mh}}(\boldsymbol x)$, where the cycle carries at each site the weight
 \[
 a=2z^2+3z,\qquad b=z^2+2z,\qquad c=z^3+3z^2+3z
@@ -468,12 +468,13 @@ The author holds equity in Heights Labs and Convex Nexus Capital and has a manag
 
 \section*{Declaration of generative AI and AI-assisted technologies}
 
+This paper is part of a broader research project on proving open problems with AI systems.
 The proofs of \Cref{thm:main}, \Cref{prop:lower} and \Cref{thm:sector} were developed with AI systems (OpenAI Codex
 and Anthropic Claude agents working under the author's direction), which also drafted the text and wrote the computer
 checks. The questions are those of Jerrum and Patel \cite[Section~7]{JP}. The regions $R(K)$, the notion of a
 simplicial clique and the recurrence for $W(H,Q)$ in \Cref{sec:main} are taken from \cite{JP} (Theorem~6 and the proof
 of Lemma~12 there), and the transfer matrices and the summation over bags in \Cref{sec:sector} follow
-\cite[Sections~5.1 and~5.2]{JP}. The region $R(k^2/4)$ for line graphs is implicit in the work of Lebowitz, Ruelle and
+\cite[Sections~5.1, 5.2 and~5.4]{JP}. The region $R(k^2/4)$ for line graphs is implicit in the work of Lebowitz, Ruelle and
 Speer \cite{LRS} and was made explicit by Jerrum and Patel \cite[Theorem~4]{JP}. The Schl\"afli graph example and same-phase stability are due to Leake and Ryder \cite{LR}, and the order of
 magnitude of $r(3,k)$ to Ajtai, Koml\'os and Szemer\'edi \cite{AKS} and Kim \cite{Kim}. The author directed the work and is responsible for the content of the paper and for
 decisions concerning its dissemination.
@@ -566,7 +567,8 @@ Y.~Shmalo, \emph{Math Brain: public snapshot, code and tests}, 2026.
 
 \bibitem{MathBrainPaper}
 Y.~Shmalo, \emph{Math Brain: shared, auditable memory for multi-agent mathematical research}, October 2026.
-\url{https://github.com/yspennstate/math-brain-public/tree/main/papers/math-brain-2026-10-24}
+\url{https://github.com/yspennstate/math-brain-public/tree/main/papers/math-brain-2026-10-24},
+\doi{10.5281/zenodo.24150837}.
 
 \bibitem{BrainFramework}
 Y.~Shmalo, \emph{Brain Framework}, public software repository, 2026.
