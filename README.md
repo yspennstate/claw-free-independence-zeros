@@ -2,6 +2,8 @@
 
 This repository holds the paper `main.tex` (compiled as `main.pdf`) and the script `check.py`.
 
+The paper is archived on Zenodo: https://doi.org/10.5281/zenodo.24434503 (all versions).
+
 The paper answers two questions asked by Jerrum and Patel about the parabolic regions
 R(K) = {z : (Im z)^2 < Re z / K + 1/(4K^2)}. Every claw-free graph of maximum degree at most Delta has the
 multivariate zero-free region R(2500(Delta+1)), and every claw-free graph of clique number at most k has
